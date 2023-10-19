@@ -30,14 +30,15 @@ npm exec vsce package
 ```bash
 git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
 cd llama_cpp_for_codeshell
+make server
 ```
 
 ### 下载模型
 
-在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell.gguf)将模型下载到本地后，将模型放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹的路径，即可从本地加载模型。
+在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf)将模型下载到本地后，将模型放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹的路径，即可从本地加载模型。
 
 ```bash
-git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/codeshell_q4_0.gguf
+git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf
 ```
 
 ### 部署模型

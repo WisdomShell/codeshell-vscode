@@ -29,15 +29,16 @@ The [`llama_cpp_for_codeshell`](https://github.com/WisdomShell/llama_cpp_for_cod
 
 ```bash
 git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
-cd codeshell.cpp
+cd llama_cpp_for_codeshell
+make server
 ```
 
 ### Load the model locally
 
-After downloading the model from the [Hugging Face Hub](https://huggingface.co/WisdomShell/codeshell.gguf) to your local machine, placing the model in the `llama_cpp_for_codeshell/models` folder path in the above code will allow you to load the model locally.
+After downloading the model from the [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf) to your local machine, placing the model in the `llama_cpp_for_codeshell/models` folder path in the above code will allow you to load the model locally.
 
 ```bash
-git clone https://huggingface.co/WisdomShell/CodeShell_q4_0.gguf
+git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf
 ```
 
 ### Deploy the Model 
