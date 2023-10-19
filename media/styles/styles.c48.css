@@ -1,0 +1,51 @@
+[_ngcontent-uim-c48]:root {
+    --font13: 13px;
+    --font10: calc(var(--font13) - 3px);
+    --font11: calc(var(--font13) - 2px);
+    --font12: calc(var(--font13) - 1px);
+    --font14: calc(var(--font13) + 1px);
+    --font15: calc(var(--font13) + 2px);
+    --font16: calc(var(--font13) + 3px);
+    --font17: calc(var(--font13) + 4px);
+    --font18: calc(var(--font13) + 5px);
+    --font19: calc(var(--font13) + 6px);
+    --font20: calc(var(--font13) + 7px);
+    --minHeightAI: 40px
+}
+
+.header[_ngcontent-uim-c48] {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #44484A;
+    font-family: Public Sans, sans-serif !important;
+    font-size: var(--font15);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #7a8084;
+    left: 15px;
+    top: 0;
+    background-color: #2f3133;
+    z-index: 1500
+}
+
+.signInBtn[_ngcontent-uim-c48] {
+    background-color: #1f98e9 !important;
+    color: #fff !important
+}
+
+.signInBtn[_ngcontent-uim-c48] a[_ngcontent-uim-c48] {
+    color: #fff !important
+}
+
+.welcome-wrapper[_ngcontent-uim-c48] {
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 15px;
+    padding-top: 15vh;
+    width: 100vw;
+    max-width: 100vw
+}
+

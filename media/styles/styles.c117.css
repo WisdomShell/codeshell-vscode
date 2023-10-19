@@ -1,0 +1,45 @@
+[_ngcontent-uim-c117]:root {
+    --font13: 13px;
+    --font10: calc(var(--font13) - 3px);
+    --font11: calc(var(--font13) - 2px);
+    --font12: calc(var(--font13) - 1px);
+    --font14: calc(var(--font13) + 1px);
+    --font15: calc(var(--font13) + 2px);
+    --font16: calc(var(--font13) + 3px);
+    --font17: calc(var(--font13) + 4px);
+    --font18: calc(var(--font13) + 5px);
+    --font19: calc(var(--font13) + 6px);
+    --font20: calc(var(--font13) + 7px);
+    --minHeightAI: 40px
+}
+
+.loading-spinner[_ngcontent-uim-c117] {
+    background-color: #aaa6a61f;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    z-index: 3002;
+    opacity: 9999
+}
+
+.force-loadin-ide-spinner[_ngcontent-uim-c117] .loading-spinner[_ngcontent-uim-c117] {
+    z-index: 3005;
+    background-color: #000
+}
+
+.force-loadin-ide-spinner[_ngcontent-uim-c117] .loader-text[_ngcontent-uim-c117] {
+    color: #fff;
+    font-size: var(--font20);
+    position: fixed;
+    top: 55%;
+    z-index: 3003;
+    margin: auto;
+    width: 100%;
+    text-align: center
+}
+

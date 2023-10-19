@@ -1,0 +1,773 @@
+:root {
+    --font13: 13px;
+    --font10: calc(var(--font13) - 3px);
+    --font11: calc(var(--font13) - 2px);
+    --font12: calc(var(--font13) - 1px);
+    --font14: calc(var(--font13) + 1px);
+    --font15: calc(var(--font13) + 2px);
+    --font16: calc(var(--font13) + 3px);
+    --font17: calc(var(--font13) + 4px);
+    --font18: calc(var(--font13) + 5px);
+    --font19: calc(var(--font13) + 6px);
+    --font20: calc(var(--font13) + 7px);
+    --minHeightAI: 40px
+}
+
+body.body-y-scroll {
+    overflow-y: scroll !important
+}
+
+.aiChat-title {
+    color: #fff;
+    width: 98%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-family: Public Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 150%;
+    margin: 5px 0 0
+}
+
+.question-title,
+.answer-title {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: var(--font13);
+    line-height: 150%;
+    color: #7a8084;
+    padding: 5px 0
+}
+
+.answerDiv {
+    color: #fff;
+    font-size: var(--font13);
+    margin: 10px 0;
+    white-space: break-spaces;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+.primary {
+    background: #007ACC;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer
+}
+
+.secondary {
+    border: 1px solid #585858;
+    color: #fff;
+    cursor: pointer
+}
+
+.secondary:disabled {
+    cursor: none
+}
+
+.primary:disabled {
+    cursor: none
+}
+
+.submit:hover {
+    color: #92a1b1
+}
+
+.history-btn-section {
+    display: flex;
+    padding: 5px 5px 12px
+}
+
+.history-buttons-container {
+    height: 30px;
+    display: flex
+}
+
+.history-buttons {
+    color: #7a8084;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--font13);
+    line-height: 150%
+}
+
+.history-btn {
+    padding: 6px 12px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    cursor: pointer
+}
+
+.history-btn:hover {
+    background: rgba(208, 214, 217, .05);
+    border-radius: 3px
+}
+
+.history-btn:hover .history-buttons,
+.history-buttons:hover {
+    color: #fff
+}
+
+.empty-placeholder {
+    color: #7a8084;
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(100vh - 230px)
+}
+
+.placeholder-title {
+    font-weight: 600;
+    font-size: var(--font13);
+    margin-top: 10px;
+    padding-bottom: 8px
+}
+
+.empty-placeholder .help-icon {
+    height: 40px;
+    width: 40px;
+    margin: 0 12px 0 0
+}
+
+.empty-placeholder .try-it-out-icon-wrapper .try-it-out-icon {
+    width: 152.48px;
+    height: 104.88px;
+    margin: 0;
+    position: relative;
+    left: -15px
+}
+
+.empty-placeholder .placeholder-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+    padding-bottom: 8px;
+    line-height: 27px;
+    color: #7a8084
+}
+
+.empty-placeholder .sample-question-container .placeholder-subtitle {
+    font-weight: 400;
+    font-size: var(--font13);
+    text-align: center;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #44484A;
+    gap: 2px;
+    margin-bottom: 6px
+}
+
+.empty-placeholder .sample-question-container .placeholder-subtitle:hover {
+    cursor: pointer;
+    background-color: #d0d6d90d
+}
+
+.ps {
+    padding: 12px 10px
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: disc
+}
+
+.placeholder-example {
+    font-size: var(--font12)
+}
+
+.chat-container {
+    width: 100%;
+    height: calc(98vh - 218px);
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.chat-container .qa-section-div-main {
+    padding: 0 7px;
+    border-bottom: .5px solid #7A8084
+}
+
+.chat-container .qa-section-div-main:last-of-type {
+    border-bottom: none
+}
+
+.chat-container .qa-section-div-main:after {
+    clear: both;
+    content: "";
+    display: table;
+    height: 5px
+}
+
+.footerContent {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    margin-bottom: 8px
+}
+
+.reduce-chat-height-40 {
+    height: 64vh !important
+}
+
+.reduce-chat-height-60 {
+    height: 69vh !important
+}
+
+.reduce-chat-height-80 {
+    height: 66vh !important
+}
+
+.questionDiv,
+.question-title {
+    display: flex
+}
+
+.questionDiv {
+    background: #007ACC;
+    border-radius: 12px 12px 4px 4px;
+    padding: 4px;
+    color: #fff;
+    font-weight: 400;
+    font-size: var(--font13);
+    float: right;
+    overflow-wrap: anywhere;
+    white-space: break-spaces
+}
+
+.questionDiv .questionText span {
+    padding-bottom: 5px
+}
+
+.questionDiv .CodeSection {
+    background-color: #171818;
+    border-radius: 5px
+}
+
+.questionDiv .CodeSection .file-Header {
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: var(--font13);
+    line-height: 13px
+}
+
+.questionDiv .CodeSection .file-Header .file-info .file-name {
+    color: #c4c9cc;
+    max-width: 35vw
+}
+
+.questionDiv .CodeSection .file-Header .file-info .file-line-number {
+    color: #7a8084
+}
+
+.questionDiv .CodeSection .code-view-toggle {
+    color: #2baaff
+}
+
+.questionDiv .CodeSection .code-view-toggle:hover {
+    cursor: pointer
+}
+
+.questionDiv .CodeSection .code-view-toggle .btn-toggle-code:after {
+    content: "View"
+}
+
+.questionDiv .CodeSection .code-view-toggle .btn-toggle-code.state-show:after {
+    content: "Hide"
+}
+
+.questionDiv .CodeSection .code-block {
+    background-color: #212224;
+    border-radius: 5px
+}
+
+.questionDiv .CodeSection .code-block pre,
+.questionDiv .CodeSection .code-block code {
+    margin-top: 0 !important;
+    margin-bottom: -3px !important
+}
+
+.questionDiv .CodeSection .code-block code.hljs {
+    display: inline-block;
+    background: inherit;
+    color: #839496;
+    -webkit-text-size-adjust: none;
+    width: 100%
+}
+
+.answerDiv {
+    background: #44484A;
+    border-radius: 12px 12px 12px 4px;
+    padding: 4px;
+    margin: 0;
+    overflow-wrap: anywhere;
+    white-space: break-spaces;
+    font-size: var(--font13);
+    font-weight: 400;
+    width: 100%
+}
+
+.question-container {
+    padding: 0;
+    float: right
+}
+
+.answer-container {
+    padding: 0;
+    width: 100%
+}
+
+.chat-input {
+    font-size: var(--font13);
+    padding: 10px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px
+}
+
+.textarea-container {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 10px
+}
+
+a.send {
+    border-radius: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: #007acc;
+    margin: 3px;
+    padding: 3px 5px
+}
+
+a.send-disabled {
+    background: none;
+    cursor: default
+}
+
+.send-icon-disabled {
+    opacity: 50%
+}
+
+.chat-input:focus+#reply-buttons2 {
+    border-left: 1px solid #1f98e9;
+    border-bottom: 1px solid #1f98e9;
+    border-right: 1px solid #1f98e9
+}
+
+.shift-enter-text {
+    padding-right: 4px;
+    color: #7a8084;
+    font-size: 11px
+}
+
+.back-btn {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-size: var(--font14);
+    font-weight: 600;
+    color: #fff
+}
+
+.history-question,
+.history-answer {
+    padding: 8px 12px 12px
+}
+
+.history-question {
+    background: #44484A
+}
+
+.history-text {
+    color: #fff;
+    padding-top: 12px;
+    overflow-wrap: anywhere;
+    white-space: break-spaces
+}
+
+.divider {
+    height: 2px;
+    background: #7A8084
+}
+
+.history-title {
+    padding-top: 4px;
+    font-size: var(--font13);
+    font-weight: 600;
+    color: #7a8084
+}
+
+.history-created {
+    font-size: var(--font13);
+    font-weight: 400;
+    color: #7a8084;
+    padding-top: 4px
+}
+
+.copy-btn-text {
+    font-size: var(--font13);
+    font-weight: 600
+}
+
+.copy-btn {
+    padding: 4px 4px 4px 8px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: #7a8084;
+    cursor: pointer
+}
+
+.copy-btn:hover {
+    background: rgba(208, 214, 217, .05);
+    border-radius: 3px
+}
+
+.copy-btn:hover .copy-btn-text,
+.copy-btn-text:hover {
+    color: #fff
+}
+
+.loading1-spinner {
+    background-color: #00000085;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    z-index: 3002;
+    opacity: 9999;
+    min-width: 250px
+}
+
+.spinner1-border {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: 1.75px solid #fff;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+    margin-top: -250px
+}
+
+.loader-text {
+    color: #fff;
+    font-size: var(--font20);
+    position: fixed;
+    top: 50%;
+    z-index: 3003;
+    margin: auto;
+    width: 100%;
+    text-align: center
+}
+
+.insert-btn-txt {
+    float: right;
+    padding: 4px 4px 4px 8px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: #7a8084;
+    cursor: pointer;
+    right: 50%;
+    font-size: var(--font13);
+    font-weight: 600
+}
+
+.insert-btn-txt:hover {
+    background: rgba(208, 214, 217, .05);
+    border-radius: 3px;
+    color: #fff
+}
+
+pre code.hljs {
+    display: block;
+    overflow-x: hidden;
+    background: #212224;
+    border-radius: 0 0 4px 4px;
+    padding: 12px;
+    margin: 0;
+    font-size: var(--font13)
+}
+
+pre code.hljs:hover {
+    overflow-x: overlay
+}
+
+pre {
+    margin-top: 0 !important;
+    margin-bottom: 0rem !important
+}
+
+.outputDivPreblock {
+    overflow-x: hidden
+}
+
+.operations {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    background: #171818;
+    height: 32px;
+    border-radius: 4px 4px 0 0
+}
+
+#main-div-aichat {
+    margin: 0;
+    padding: 5px
+}
+
+#questioninput {
+    overflow: hidden;
+    border-bottom: none !important
+}
+
+@media (max-width: 250px) {
+    .footerContent {
+        width: 99%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        margin-bottom: 8px
+    }
+
+    #questioninput {
+        overflow: auto !important
+    }
+}
+
+.preCodeBlockText {
+    font-size: var(--font13);
+    line-height: 22.5px;
+    color: #fff;
+    margin-bottom: 8px;
+    padding-left: 6px
+}
+
+.outputDivPreblock {
+    overflow-x: hidden;
+    white-space: normal;
+    margin: 0 !important
+}
+
+.ant-tooltip {
+    font-size: var(--font13) !important
+}
+
+.ai-parent-div:focus {
+    border: 1px solid blue
+}
+
+.active {
+    border: 1px solid #007acc;
+    border-bottom: .5px solid #007acc !important
+}
+
+.diffBtns:hover {
+    background-color: transparent !important
+}
+
+.rejectDiffBtn {
+    border-color: #f14c4c;
+    color: #f14c4c;
+    margin-right: 6px;
+    font-family: Public Sans
+}
+
+.acceptDiffBtn {
+    border-color: #69bf13;
+    color: #69bf13;
+    margin-right: 6px;
+    font-family: Public Sans
+}
+
+.diffBtn {
+    margin-right: 5px;
+    padding: 4px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: #7a8084;
+    cursor: pointer;
+    right: 50%;
+    font-size: var(--font13);
+    font-weight: 600;
+    float: right
+}
+
+.edit-btn {
+    float: right;
+    padding: 2px 4px 4px 8px;
+    margin-right: 0px;
+    cursor: pointer
+}
+
+.edit-btn:hover {
+    background: rgba(208, 214, 217, .05);
+    border-radius: 3px
+}
+
+a.redo {
+    float: left;
+    position: relative;
+    line-height: 18px;
+    text-align: center;
+    width: 31px;
+    height: 31px;
+    border-bottom-right-radius: 2px;
+    cursor: pointer
+}
+
+.redoBtn {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+}
+
+.redoBtn:hover {
+    cursor: pointer;
+    background-color: #d0d6d90d
+}
+
+.ai-parent-div,
+.footerContent {
+    min-width: 250px
+}
+
+.questionDiv .linki {
+    color: #fff !important;
+    text-decoration: underline !important
+}
+
+.like-btn {
+    padding: 4px 4px 4px 8px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: #7a8084;
+    cursor: pointer
+}
+
+.like-btn:hover path {
+    border-radius: 3px;
+    background: #7A8084
+}
+
+.dislike-btn {
+    padding: 4px 4px 4px 8px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: #7a8084;
+    cursor: pointer
+}
+
+.dislike-btn:hover path {
+    border-radius: 3px;
+    fill: #7a8084
+}
+
+.feedBackControl {
+    height: 24px
+}
+
+@media (max-width: 270px) {
+    .feedBackControl {
+        height: auto
+    }
+}
+
+.tzs-stop-streaming-button-section {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 2px;
+    z-index: 10;
+    margin-top: -30px
+}
+
+.tzs-stop-streaming-button-section .btn-black-streaming {
+    background: #595D60;
+    border: 1px solid #7A8084;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: 400;
+    width: 120px;
+}
+
+@media (max-width: 250px) {
+    .tzs-stop-streaming-button-section {
+        margin-top: -45px
+    }
+}
+
+.session-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.session-buttons .icon-container {
+    padding: 4px;
+    margin-left: 10px
+}
+
+.ai-chat-header-share .sharebutton img {
+    width: 16px !important;
+    height: 17.78px !important
+}
+
+.session-buttons .icon-container .delete-icon {
+    width: 17.5px;
+    height: 16.5px
+}
+
+.session-buttons .icon-container .share-icon {
+    width: 16px;
+    height: 17.78px
+}
+
+.session-buttons .icon-container:hover,
+.session-buttons .icon-container:hover {
+    cursor: pointer;
+    background-color: #d0d6d90d
+}
+
+.add-session-icon .add-session-btn {
+    height: 32px;
+    width: 32px;
+    background: #007ACC;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.add-session-icon .add-session-btn .plus-icon {
+    font-size: 32px;
+    color: #fff
+}
+
+.add-session-icon .add-session-btn:hover {
+    cursor: pointer
+}

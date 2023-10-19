@@ -1,0 +1,50 @@
+[_ngcontent-uim-c100]:root {
+    --font13: 13px;
+    --font10: calc(var(--font13) - 3px);
+    --font11: calc(var(--font13) - 2px);
+    --font12: calc(var(--font13) - 1px);
+    --font14: calc(var(--font13) + 1px);
+    --font15: calc(var(--font13) + 2px);
+    --font16: calc(var(--font13) + 3px);
+    --font17: calc(var(--font13) + 4px);
+    --font18: calc(var(--font13) + 5px);
+    --font19: calc(var(--font13) + 6px);
+    --font20: calc(var(--font13) + 7px);
+    --minHeightAI: 40px
+}
+
+.sharebutton[_ngcontent-uim-c100] {
+    padding: 3px 8px
+}
+
+.sharebutton[_ngcontent-uim-c100]:hover {
+    background: rgba(208, 214, 217, .05);
+    border-radius: 3px
+}
+
+.ant-dropdown-menu {
+    background-color: #44484a;
+    box-shadow: 0 0 20px #00000026;
+    padding: 0
+}
+
+li.ant-dropdown-menu-item[_ngcontent-uim-c100] {
+    color: #c4c9cc;
+    padding: 8px;
+    font-size: var(--font15);
+    min-height: 32px !important
+}
+
+li.ant-dropdown-menu-item[_ngcontent-uim-c100]:hover {
+    background-color: #d0d6d90d
+}
+
+.shareIcons[_ngcontent-uim-c100] {
+    width: 17.64px;
+    height: 14.54px;
+    margin-right: 5px
+}
+
+.optionContainer[_ngcontent-uim-c100] {
+    width: 131px
+}

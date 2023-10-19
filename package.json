@@ -1,0 +1,236 @@
+{
+  "name": "codeshell-vscode",
+  "displayName": "CodeShell VSCode Extension",
+  "description": "Coding with CodeShell LLM",
+  "publisher": "WisdomShell",
+  "version": "0.0.1",
+  "icon": "assets/logo.png",
+  "keywords": [
+    "code-suggestion",
+    "code-completion",
+    "code-inference"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WisdomShell/codeshell-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.68.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "CodeShell",
+      "properties": {
+        "CodeShell.ServerAddress": {
+          "description": "The address of the CodeShell server to connect to.",
+          "default": "http://localhost:8080",
+          "type": "string",
+          "order": 1
+        },
+        "CodeShell.AutoTriggerCompletion": {
+          "description": "Whether or not to automatically trigger completion when typing.",
+          "default": false,
+          "type": "boolean",
+          "order": 6
+        },
+        "CodeShell.AutoCompletionDelay": {
+          "description": "The delay in seconds before automatic code completion triggers.",
+          "type": "number",
+          "enum": [1,2,3],
+          "default": 1,
+          "order": 7
+        },
+        "CodeShell.CompletionMaxTokens": {
+          "description": "Maximum number of tokens for which suggestions will be displayed",
+          "type": "number",
+          "enum": [128,256,512,1024],
+          "default": 128,
+          "order": 8
+        },
+        "CodeShell.ChatMaxTokens": {
+          "description": "Maximum number of tokens for which chat messages will be displayed",
+          "type": "number",
+          "enum": [512,1024,2048,4096],
+          "default": 1024,
+          "order": 9
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "key": "alt+\\",
+        "mac": "alt+\\",
+        "command": "editor.action.inlineSuggest.trigger",
+        "when": "editorTextFocus"
+      }
+    ],
+    "commands": [
+      {
+        "command": "codeshell.auto_completion_enable",
+        "title": "启用 自动触发补全",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.auto_completion_disable",
+        "title": "停用 自动触发补全",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.explain_this_code",
+        "title": "解释 这段代码",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.improve_this_code",
+        "title": "优化 这段代码",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.clean_this_code",
+        "title": "清理 这段代码",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.generate_comment",
+        "title": "生成 注释",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.generate_unit_test",
+        "title": "生成 单元测试",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.check_performance",
+        "title": "检查 性能问题",
+        "category": "codeshell"
+      },
+      {
+        "command": "codeshell.check_security",
+        "title": "检查 安全性问题",
+        "category": "codeshell"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "codeshell_context_submenu",
+        "label": "CodeShell"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "codeshell_context_submenu",
+          "group": "navigation"
+        }
+      ],
+      "codeshell_context_submenu": [
+        {
+          "command": "codeshell.auto_completion_enable",
+          "group": "group1@1",
+          "when": "!config.CodeShell.AutoTriggerCompletion"
+        },
+        {
+          "command": "codeshell.auto_completion_disable",
+          "group": "group1@2",
+          "when": "config.CodeShell.AutoTriggerCompletion"
+        },
+        {
+          "command": "codeshell.explain_this_code",
+          "group": "group2@1",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "codeshell.improve_this_code",
+          "group": "group2@2",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "codeshell.clean_this_code",
+          "group": "group2@3",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "codeshell.generate_comment",
+          "group": "group3@1",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "codeshell.generate_unit_test",
+          "group": "group3@2",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "codeshell.check_performance",
+          "group": "group4@1",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "codeshell.check_security",
+          "group": "group4@2",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codeshell_sidebar",
+          "title": "CodeShell",
+          "icon": "assets/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "codeshell_sidebar": [
+        {
+          "id": "codeshell.chatView",
+          "name": "CodeShell",
+          "type": "webview"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.18.5",
+    "@types/vscode": "^1.68.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/test-electron": "^2.3.2",
+    "@vscode/vsce": "^2.21.1",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.3",
+    "typescript": "^5.1.3",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.1"
+  },
+  "dependencies": {
+    "abort-controller": "^3.0.0",
+    "eventsource-parser": "^1.1.1",
+    "nanoid": "^5.0.1",
+    "node-fetch": "^3.3.2",
+    "openai": "^3.1.0"
+  }
+}

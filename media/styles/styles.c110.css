@@ -1,0 +1,212 @@
+[_ngcontent-uim-c110]:root {
+    --font13: 13px;
+    --font10: calc(var(--font13) - 3px);
+    --font11: calc(var(--font13) - 2px);
+    --font12: calc(var(--font13) - 1px);
+    --font14: calc(var(--font13) + 1px);
+    --font15: calc(var(--font13) + 2px);
+    --font16: calc(var(--font13) + 3px);
+    --font17: calc(var(--font13) + 4px);
+    --font18: calc(var(--font13) + 5px);
+    --font19: calc(var(--font13) + 6px);
+    --font20: calc(var(--font13) + 7px);
+    --minHeightAI: 40px
+}
+
+.ant-collapse {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #000000d9;
+    font-size: var(--font14);
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum", "tnum";
+    background-color: #2f3133 !important;
+    border: none;
+    border-bottom: 0;
+    border-radius: 2px;
+    color: #7a8084 !important
+}
+
+.ant-collapse .ant-collapse-content {
+    --min-height: 40px;
+    color: #7a8084 !important;
+    background-color: #2f3133 !important;
+    border-top: none !important;
+    min-height: var(--minHeightAI) !important
+}
+
+.ant-collapse .ant-collapse-header {
+    border-radius: 0 0 2px 2px !important;
+    color: #7a8084 !important;
+    text-align: center !important;
+    font-size: var(--font13) !important;
+    font-weight: 500 !important;
+    padding: 4px 0 !important;
+    border-top: 1px solid #44484A;
+    height: 28px !important
+}
+
+.ant-collapse .ant-collapse-item {
+    border-bottom: none !important
+}
+
+.ant-collapse .ant-collapse-arrow {
+    color: #2baaff !important;
+    position: absolute !important;
+    top: 60% !important;
+    right: auto !important;
+    margin-left: 46px !important;
+    left: unset !important;
+    transform: translateY(-50%) !important
+}
+
+.ant-collapse .ant-collapse-extra {
+    float: left !important;
+    top: 27%;
+    left: 32%;
+    position: absolute
+}
+
+.ant-collapse .ant-tooltip {
+    max-width: calc(80vw - 20px) !important;
+    font-size: var(--font12) !important
+}
+
+.ant-collapse .ant-tooltip-inner {
+    color: #ff0 !important;
+    background-color: green !important;
+    width: 200px !important
+}
+
+.ant-collapse .ant-collapse-content-box {
+    padding: 0 16px !important
+}
+
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts[_ngcontent-uim-c110] {
+    text-align: center;
+    padding: 0;
+    color: #c4c9cc
+}
+
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts[_ngcontent-uim-c110] .shortcut-title[_ngcontent-uim-c110] {
+    font-size: var(--font11)
+}
+
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts-wrapper[_ngcontent-uim-c110] {
+    display: inline-block
+}
+
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts-content[_ngcontent-uim-c110]:hover,
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts-content.hovered[_ngcontent-uim-c110],
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts-wrapper[_ngcontent-uim-c110]:hover,
+.shortcuts-grid[_ngcontent-uim-c110] .shortcuts-wrapper.hovered[_ngcontent-uim-c110] {
+    color: #fff;
+    cursor: pointer
+}
+
+@media (max-width: 265px) {
+    .shortcut-title[_ngcontent-uim-c110] {
+        display: none
+    }
+
+    .shortcuts[_ngcontent-uim-c110] {
+        padding-bottom: 5px;
+        padding-top: 5px
+    }
+
+    .ant-collapse .ant-collapse-content {
+        min-height: 24px !important
+    }
+}
+
+@media (max-width: 313px) {
+    .shortcut-title[_ngcontent-uim-c110] {
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+}
+
+.ant-collapse[_ngcontent-uim-c110] .ant-collapse-arrow.showAnimation[_ngcontent-uim-c110] {
+    animation: bouncingBallAnimation 1s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.4, .06, 1, .6);
+    animation-iteration-count: infinite
+}
+
+@keyframes bouncingBallAnimation {
+    0% {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(-10px)
+    }
+}
+
+.custom-shortcut-menu[_ngcontent-uim-c110] {
+    vertical-align: top;
+    float: right;
+    padding: 5px;
+    position: absolute;
+    margin-left: calc(50% - 30px);
+    cursor: pointer
+}
+
+.custom-shortcut-menu[_ngcontent-uim-c110]:hover {
+    background: rgba(208, 214, 217, .05)
+}
+
+.ant-dropdown-menu {
+    background-color: #44484a;
+    box-shadow: 0 0 20px #00000026;
+    padding: 0
+}
+
+li.ant-dropdown-menu-item[_ngcontent-uim-c110] {
+    color: #c4c9cc;
+    padding: 8px;
+    font-size: var(--font15);
+    min-height: 32px !important
+}
+
+li.ant-dropdown-menu-item[_ngcontent-uim-c110]:hover {
+    background-color: #d0d6d90d
+}
+
+.ant-dropdown-menu-submenu-title {
+    color: #c4c9cc;
+    padding: 8px;
+    font-size: var(--font15);
+    min-height: 32px !important
+}
+
+.ant-dropdown-menu-submenu-title:hover {
+    background-color: #d0d6d90d !important
+}
+
+.ant-dropdown-menu-submenu-expand-icon {
+    display: none !important
+}
+
+.option-container[_ngcontent-uim-c110] {
+    width: 131px;
+    border-radius: 2px
+}
+
+.option-container[_ngcontent-uim-c110] .delete-icon[_ngcontent-uim-c110] {
+    width: 17.5px;
+    height: 16.5px
+}
+
+.option-container[_ngcontent-uim-c110] p[_ngcontent-uim-c110] {
+    font-size: 15px;
+    color: #c4c9cc;
+    margin-left: 8px;
+    font-weight: 400
+}
+

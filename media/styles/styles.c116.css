@@ -1,0 +1,236 @@
+[_ngcontent-uim-c116]:root {
+    --font13: 13px;
+    --font10: calc(var(--font13) - 3px);
+    --font11: calc(var(--font13) - 2px);
+    --font12: calc(var(--font13) - 1px);
+    --font14: calc(var(--font13) + 1px);
+    --font15: calc(var(--font13) + 2px);
+    --font16: calc(var(--font13) + 3px);
+    --font17: calc(var(--font13) + 4px);
+    --font18: calc(var(--font13) + 5px);
+    --font19: calc(var(--font13) + 6px);
+    --font20: calc(var(--font13) + 7px);
+    --minHeightAI: 40px
+}
+
+.links[_ngcontent-uim-c116]:hover {
+    background-color: #2c4880;
+    color: #fff !important
+}
+
+a[_ngcontent-uim-c116]:active {
+    background: #2f3133;
+    color: #fff !important
+}
+
+.contactUs[_ngcontent-uim-c116] {
+    color: #53a9f8 !important;
+    font-size: var(--font14) !important;
+    text-decoration: underline !important
+}
+
+.contactUs[_ngcontent-uim-c116]:hover {
+    color: #fff
+}
+
+.active[_ngcontent-uim-c116] {
+    background: #2f3133;
+    color: #fff !important
+}
+
+.user-mention[_ngcontent-uim-c116] {
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+    max-height: 400px;
+    border: none;
+    border-radius: 4px;
+    background: #44484a;
+    overflow: auto;
+    color: #c4c9cc;
+    top: 25px;
+    position: absolute;
+    right: 10px
+}
+
+.user-mention[_ngcontent-uim-c116] .listing[_ngcontent-uim-c116] {
+    word-break: break-all;
+    padding: 3%;
+    font-size: var(--font13);
+    font-weight: 400;
+    border-bottom: 1px solid #565656
+}
+
+.user-mention[_ngcontent-uim-c116] .listing[_ngcontent-uim-c116]:hover {
+    background: #007bff;
+    color: #fff;
+    cursor: pointer
+}
+
+.user-mention[_ngcontent-uim-c116] .listing[_ngcontent-uim-c116]:hover a[_ngcontent-uim-c116] {
+    color: #fff;
+    text-decoration: underline
+}
+
+.user-mention[_ngcontent-uim-c116] .listing[_ngcontent-uim-c116]:hover .contactUs[_ngcontent-uim-c116] {
+    color: #fff !important;
+    text-decoration: underline
+}
+
+.links[_ngcontent-uim-c116] {
+    padding: .5rem !important;
+    position: relative !important;
+    height: 100%
+}
+
+.namesBox[_ngcontent-uim-c116] {
+    width: 32px;
+    height: 32px;
+    position: static;
+    float: left;
+    color: #fff;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    margin-left: 3px;
+    font-size: var(--font13);
+    border: 3px solid #80808073
+}
+
+.feed[_ngcontent-uim-c116] {
+    padding: .5rem !important;
+    position: relative !important
+}
+
+.feed[_ngcontent-uim-c116]:hover {
+    background-color: #2f3133;
+    color: #fff !important;
+    text-decoration: none !important
+}
+
+.feed[_ngcontent-uim-c116] {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 4px 8px;
+    width: 100%;
+    height: 40px
+}
+
+@media (max-width: 250px) {
+    .feed[_ngcontent-uim-c116] span.hd-low-res[_ngcontent-uim-c116] {
+        display: none
+    }
+}
+
+.tooltipforWorkSpaceName[_ngcontent-uim-c116] {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 5;
+    height: 30px;
+    opacity: 0;
+    margin-left: 42px;
+    padding: 10px;
+    transition: opacity .3s;
+    top: 5px;
+    font-size: var(--font12)
+}
+
+.home[_ngcontent-uim-c116]:hover .tooltipforWorkSpaceName[_ngcontent-uim-c116] {
+    visibility: visible;
+    opacity: 1;
+    display: block
+}
+
+.modal-dialog[_ngcontent-uim-c116] {
+    position: absolute;
+    width: auto;
+    margin: 0 !important;
+    pointer-events: none;
+    bottom: 40px;
+    width: 100%;
+    border-radius: 0
+}
+
+.modal-dialog[_ngcontent-uim-c116] {
+    max-width: 100%;
+    margin: 1.75rem auto
+}
+
+.modal-content[_ngcontent-uim-c116] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0;
+    outline: 0;
+    color: #fff;
+    background-color: #2f3133
+}
+
+.modal-header[_ngcontent-uim-c116] {
+    padding: 1rem .8rem !important
+}
+
+.modal-body[_ngcontent-uim-c116] {
+    padding: 0rem .8rem
+}
+
+.modal-title[_ngcontent-uim-c116] {
+    font-family: Public Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--font18);
+    line-height: 150%
+}
+
+.modal-Parent[_ngcontent-uim-c116] {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1041;
+    left: 0
+}
+
+@media only screen and (min-width: 450px) {
+    .usr-profile.user-mention[_ngcontent-uim-c116] {
+        width: 250px;
+        max-width: 250px
+    }
+}
+
+@media only screen and (max-width: 276px) {
+    app-loggedin-header[_ngcontent-uim-c116] .user-mention[_ngcontent-uim-c116] {
+        width: 75%;
+        max-width: 75%
+    }
+}
+
+.listing[_ngcontent-uim-c116] img[_ngcontent-uim-c116] {
+    margin-right: 5px
+}
+
+.open-file-sect[_ngcontent-uim-c116] {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(95vw - 170px)
+}
+
+.options-container[_ngcontent-uim-c116],
+#settings-option[_ngcontent-uim-c116] {
+    height: 100%
+}
