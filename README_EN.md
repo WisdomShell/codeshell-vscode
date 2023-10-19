@@ -23,14 +23,14 @@ and get `codeshell-vscode-${VERSION_NAME}.vsix`。
 
 ##  Model Service
 
-The [`llama_cpp_for_codeshell`](https://github.com/WisdomShell/llama_cpp_for_codeshell) project provides the 4-bit quantized model service of the [CodeShell](https://github.com/WisdomShell/codeshell) LLM, named `CodeShell_q4_0.gguf`. Here are the steps to deploy the model service:
+The [`llama_cpp_for_codeshell`](https://github.com/WisdomShell/llama_cpp_for_codeshell) project provides the 4-bit quantized model service of the [CodeShell](https://github.com/WisdomShell/codeshell) LLM, named `codeshell-chat-q4_0.gguf`. Here are the steps to deploy the model service:
 
 ### Get the Code
 
 ```bash
 git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
 cd llama_cpp_for_codeshell
-make server
+make
 ```
 
 ### Load the model locally
@@ -46,7 +46,7 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/co
 Use the `server` command in the `llama_cpp_for_codeshell` project to provide API services.
 
 ```bash
-./server -m ./models/CodeShell_q4_0.gguf --host 127.0.0.1 --port 8080
+./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
 
 The default deployment is on local port 8080, and it can be called through the POST method.

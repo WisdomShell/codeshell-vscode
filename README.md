@@ -23,14 +23,14 @@ npm exec vsce package
 
 ##  模型服务
 
-[`llama_cpp_for_codeshell`](https://github.com/WisdomShell/llama_cpp_for_codeshell)项目提供[CodeShell大模型](https://github.com/WisdomShell/codeshell) 4bits量化后的模型，模型名称为`CodeShell_q4_0.gguf`。以下为部署模型服务步骤：
+[`llama_cpp_for_codeshell`](https://github.com/WisdomShell/llama_cpp_for_codeshell)项目提供[CodeShell大模型](https://github.com/WisdomShell/codeshell) 4bits量化后的模型，模型名称为`codeshell-chat-q4_0.gguf`。以下为部署模型服务步骤：
 
 ### 获取代码
 
 ```bash
 git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
 cd llama_cpp_for_codeshell
-make server
+make
 ```
 
 ### 下载模型
@@ -46,7 +46,7 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/co
 使用`llama_cpp_for_codeshell`项目中的`server`命令即可提供API服务
 
 ```bash
-./server -m ./models/CodeShell_q4_0.gguf --host 127.0.0.1 --port 8080
+./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
 
 ## 配置插件
