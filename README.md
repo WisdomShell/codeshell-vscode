@@ -25,15 +25,31 @@ npm exec vsce package
 
 [`llama_cpp_for_codeshell`](https://github.com/WisdomShell/llama_cpp_for_codeshell)项目提供[CodeShell大模型](https://github.com/WisdomShell/codeshell) 4bits量化后的模型，模型名称为`codeshell-chat-q4_0.gguf`。以下为部署模型服务步骤：
 
-### 获取代码
+### 编译代码
 
-```bash
-git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
-cd llama_cpp_for_codeshell
-make
-```
++ Linux / Mac(Apple Silicon设备)
 
-注意：在 macOS 上，默认情况下启用了Metal架构，启用Metal 可以将模型加载到 GPU 上进行运行，从而显著提升性能。对于非 Apple Silicon 芯片的 Mac 用户，在编译时可以使用 `LLAMA_NO_METAL=1` 或 `LLAMA_METAL=OFF` 的 CMake 选项来禁用Metal构建，从而使模型正常运行。
+  ```bash
+  git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
+  cd llama_cpp_for_codeshell
+  make
+  ```
+
+  在 macOS 上，默认情况下启用了Metal，启用Metal可以将模型加载到 GPU 上进行运行，从而显著提升性能。
+
++ Mac(非Apple Silicon设备)
+
+  ```bash
+  git clone https://github.com/WisdomShell/llama_cpp_for_codeshell.git
+  cd llama_cpp_for_codeshell
+  LLAMA_NO_METAL=1 make
+  ```
+
+  对于非 Apple Silicon 芯片的 Mac 用户，在编译时可以使用 `LLAMA_NO_METAL=1` 或 `LLAMA_METAL=OFF` 的 CMake 选项来禁用Metal构建，从而使模型正常运行。
+
++ Windows
+
+  您可以选择在[Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about)中按照Linux的方法编译代码，也可以选择参考[llama.cpp仓库](https://github.com/ggerganov/llama.cpp#build)中的方法，配置好[w64devkit](https://github.com/skeeto/w64devkit/releases)后再按照Linux的方法编译。
 
 ### 下载模型
 
@@ -51,7 +67,7 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/co
 ./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
 
-注意：对于编译时启用了 Metal 的情况下，您也可以在命令行添加参数 `-ngl 0 `显式地禁用Metal GPU推理，从而使模型正常运行。
+注意：对于编译时启用了 Metal 的情况下，若运行时出现异常，您也可以在命令行添加参数 `-ngl 0 `显式地禁用Metal GPU推理，从而使模型正常运行。
 
 ## 配置插件
 
