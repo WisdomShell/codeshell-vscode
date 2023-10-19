@@ -33,6 +33,8 @@ cd llama_cpp_for_codeshell
 make
 ```
 
+Note: On macOS, the Metal architecture is enabled by default, and enabling Metal allows models to be loaded and executed on the GPU, significantly improving performance. For Mac users with non-Apple Silicon chips, you can disable Metal build during compilation using CMake options `LLAMA_NO_METAL=1` or `LLAMA_METAL=OFF` to ensure that the model functions properly.
+
 ### Load the model locally
 
 After downloading the model from the [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf) to your local machine, placing the model in the `llama_cpp_for_codeshell/models` folder path in the above code will allow you to load the model locally.
@@ -50,6 +52,8 @@ Use the `server` command in the `llama_cpp_for_codeshell` project to provide API
 ```
 
 The default deployment is on local port 8080, and it can be called through the POST method.
+
+Note: In cases where Metal is enabled during compilation, you can also explicitly disable Metal GPU inference by adding the command-line parameter `-ngl 0`, ensuring that the model functions properly.
 
 ##  Configure the Plugin
 

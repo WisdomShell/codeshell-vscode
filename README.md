@@ -33,6 +33,8 @@ cd llama_cpp_for_codeshell
 make
 ```
 
+注意：在 macOS 上，默认情况下启用了Metal架构，启用Metal 可以将模型加载到 GPU 上进行运行，从而显著提升性能。对于非 Apple Silicon 芯片的 Mac 用户，在编译时可以使用 `LLAMA_NO_METAL=1` 或 `LLAMA_METAL=OFF` 的 CMake 选项来禁用Metal构建，从而使模型正常运行。
+
 ### 下载模型
 
 在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf)将模型下载到本地后，将模型放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹的路径，即可从本地加载模型。
@@ -48,6 +50,8 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/co
 ```bash
 ./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
+
+注意：对于编译时启用了 Metal 的情况下，您也可以在命令行添加参数 `-ngl 0 `显式地禁用Metal GPU推理，从而使模型正常运行。
 
 ## 配置插件
 
