@@ -4,13 +4,13 @@ The `codeshell-vscode` project is an open-source plugin developed based on the [
 
 ## Requirements
 
-- [node](https://nodejs.org/en) version v18 and above required
-- Visual Studio Code version 1.68 and above required
+- [node](https://nodejs.org/en) version v18 and above
+- Visual Studio Code version 1.68 and above
 - The [CodeShell](https://github.com/WisdomShell/llama_cpp_for_codeshell) service is running
 
 ## Compile the Plugin
 
-If you want to package from source code, you need to install `node` version 18 or higher and execute the following command:
+If you want to run the package from source code, you need to execute the following command:
 
 ```zsh
 git clone https://github.com/WisdomShell/codeshell-vscode.git
@@ -19,7 +19,7 @@ npm install
 npm exec vsce package
 ```
 
-and get `codeshell-vscode-${VERSION_NAME}.vsix`。
+and it will create a visx package file like: `codeshell-vscode-${VERSION_NAME}.vsix`。
 
 ##  Model Service
 
@@ -37,7 +37,7 @@ Note: On macOS, the Metal architecture is enabled by default, and enabling Metal
 
 ### Load the model locally
 
-After downloading the model from the [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf) to your local machine, placing the model in the `llama_cpp_for_codeshell/models` folder path in the above code will allow you to load the model locally.
+After downloading the model from the [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf) to your local machine, placing the model in the folder: `llama_cpp_for_codeshell/models`, it will allow you to load the model locally.
 
 ```bash
 git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf
@@ -48,6 +48,7 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/co
 Use the `server` command in the `llama_cpp_for_codeshell` project to provide API services.
 
 ```bash
+cd llama_cpp_for_codeshell
 ./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
 
