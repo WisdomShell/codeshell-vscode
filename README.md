@@ -80,6 +80,34 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B
 
 - [CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)和[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)模型，使用[TGI](https://github.com/WisdomShell/text-generation-inference.git)加载本地模型，启动模型服务
 
+## 模型服务[NVIDIA GPU]
+
+对于希望使用NVIDIA GPU进行推理的用户，可以使用[`text-generation-inference`](https://github.com/huggingface/text-generation-inference)项目部署[CodeShell大模型](https://github.com/WisdomShell/codeshell)。以下为部署模型服务步骤：
+
+### 下载模型
+
+在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)将模型下载到本地后，将模型放置在 `$HOME/models` 文件夹的路径下，即可从本地加载模型。
+
+```bash
+git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat
+```
+
+### 部署模型
+
+使用以下命令即可用text-generation-inference进行GPU加速推理部署：
+
+```bash
+docker run --gpus 'all' --shm-size 1g -p 9090:80 -v $HOME/models:/data \
+        --env LOG_LEVEL="info,text_generation_router=debug" \
+        ghcr.nju.edu.cn/huggingface/text-generation-inference:1.0.3 \
+        --model-id /data/CodeShell-7B-Chat --num-shard 1 \
+        --max-total-tokens 5000 --max-input-length 4096 \
+        --max-stop-sequences 12 --trust-remote-code
+```
+
+更详细的参数说明请参考[text-generation-inference项目文档](https://github.com/huggingface/text-generation-inference)。
+
+
 ## 配置插件
 
 VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_NAME}.vsix`，完成插件安装。
