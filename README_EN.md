@@ -56,6 +56,34 @@ The default deployment is on local port 8080, and it can be called through the P
 
 Note: In cases where Metal is enabled during compilation, you can also explicitly disable Metal GPU inference by adding the command-line parameter `-ngl 0`, ensuring that the model functions properly.
 
+## Model Service [NVIDIA GPU]
+
+For users wishing to use NVIDIA GPUs for inference, the [`text-generation-inference`](https://github.com/huggingface/text-generation-inference) project can be used to deploy the [CodeShell Large Model](https://github.com/WisdomShell/codeshell). Below are the steps to deploy the model service:
+
+### Download the Model
+
+After downloading the model from the [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat) to your local machine, place the model under the path of the `$HOME/models` folder, and you can load the model locally.
+
+```bash
+git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat
+```
+
+### Deploy the Model
+
+The following command can be used for GPU-accelerated inference deployment with text-generation-inference:
+
+```bash
+docker run --gpus 'all' --shm-size 1g -p 9090:80 -v $HOME/models:/data \
+        --env LOG_LEVEL="info,text_generation_router=debug" \
+        ghcr.nju.edu.cn/huggingface/text-generation-inference:1.0.3 \
+        --model-id /data/CodeShell-7B-Chat --num-shard 1 \
+        --max-total-tokens 5000 --max-input-length 4096 \
+        --max-stop-sequences 12 --trust-remote-code
+```
+
+For a more detailed explanation of the parameters, please refer to the [text-generation-inference project documentation](https://github.com/huggingface/text-generation-inference).
+
+
 ##  Configure the Plugin
 
 - Set the address for the CodeShell service.
