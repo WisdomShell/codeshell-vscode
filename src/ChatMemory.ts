@@ -23,6 +23,7 @@ export class AIMessage extends ChatMessage {
 
     append(text: string) {
         this.content += text;
+        this.content = this.content.replace("|end|", "");
         this.content = this.content.replace("|<end>|", "");
         this.content = this.content.replace("<|endoftext|>", "");
     }

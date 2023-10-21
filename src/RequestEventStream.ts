@@ -10,27 +10,40 @@ export async function stopEventStream() {
 }
 
 export async function postEventStream(prompt: string, msgCallback: (data: string) => any, doneCallback: () => void, errorCallback: (err: any) => void) {
-    let maxtokens = workspace.getConfiguration("CodeShell").get("ChatMaxTokens") as number;
-    let body = {
-        "prompt": "|<end>|" + prompt,
-        "temperature": 0.2,
-        "frequency_penalty": 1.2,
-        "stream": true,
-        "stop": ["|<end>|"],
-        "n_predict": maxtokens
-    };
-    let jsonBody = JSON.stringify(body);
+    const serverAddress = workspace.getConfiguration("CodeShell").get("ServerAddress") as string;
+    const maxtokens = workspace.getConfiguration("CodeShell").get("ChatMaxTokens") as number;
 
-    let address = workspace.getConfiguration("CodeShell").get("ServerAddress") as string;
+    const modelEnv = workspace.getConfiguration("CodeShell").get("RunEnvForLLMs") as string;
+    var uri = "";
+    var body = {};
+    if ("CPU with llama.cpp" == modelEnv) {
+        uri = "/completion"
+        body = {
+            "prompt": "|<end>|" + prompt,
+            "n_predict": maxtokens, "temperature": 0.8, "repetition_penalty": 1.2,
+            "top_k":40,  "top_p":0.95, "stream": true, "stop": ["|<end>|"],
+        };
+    }
+    if ("GPU with TGI toolkit" == modelEnv) {
+        uri = "/generate_stream"
+        body = {
+            'inputs': prompt,
+            'parameters': {
+                'max_new_tokens': maxtokens,
+                'temperature': 0.6, 'top_p': 0.95, 'do_sample': true, 'repetition_penalty': 1.2, 
+                'stop': ["|<end>|", "|end|", "<|endoftext|>", "## human"]
+            }
+        };
+    }
     abortController = new AbortController();
     new FetchStream({
-        url: address + "/completion",
+        url: serverAddress + uri,
         requestInit: {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: jsonBody,
+            body: JSON.stringify(body),
             signal: abortController.signal
         },
         onmessage: msgCallback,

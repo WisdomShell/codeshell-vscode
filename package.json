@@ -3,7 +3,7 @@
   "displayName": "CodeShell VSCode Extension",
   "description": "Coding with CodeShell LLM",
   "publisher": "WisdomShell",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "assets/logo.png",
   "keywords": [
     "code-suggestion",
@@ -30,13 +30,20 @@
       "properties": {
         "CodeShell.ServerAddress": {
           "description": "The address of the CodeShell server to connect to.",
-          "default": "http://localhost:8080",
+          "default": "http://127.0.0.1:8080",
           "type": "string",
           "order": 1
         },
+        "CodeShell.RunEnvForLLMs": {
+          "description": "The environment that should be used for running LLMs",
+          "default": "CPU with llama.cpp",
+          "enum": ["CPU with llama.cpp", "GPU with TGI toolkit"],
+          "type": "string",
+          "order": 2
+        },
         "CodeShell.AutoTriggerCompletion": {
           "description": "Whether or not to automatically trigger completion when typing.",
-          "default": false,
+          "default": true,
           "type": "boolean",
           "order": 6
         },
@@ -50,15 +57,15 @@
         "CodeShell.CompletionMaxTokens": {
           "description": "Maximum number of tokens for which suggestions will be displayed",
           "type": "number",
-          "enum": [128,256,512,1024],
-          "default": 128,
+          "enum": [64,128,256,512,1024],
+          "default": 64,
           "order": 8
         },
         "CodeShell.ChatMaxTokens": {
           "description": "Maximum number of tokens for which chat messages will be displayed",
           "type": "number",
-          "enum": [512,1024,2048,4096],
-          "default": 1024,
+          "enum": [1024,2048,4096,8192],
+          "default": 2048,
           "order": 9
         }
       }

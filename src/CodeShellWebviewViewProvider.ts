@@ -165,8 +165,10 @@ export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider 
 			if (jsonData.content) {
 				chatItem.aiMessage.append(jsonData.content);
 			}
+			if (jsonData.token) {
+				chatItem.aiMessage.append(jsonData.token.text);
+			}
 			if (jsonData.id && jsonData.id !== "0") {
-				console.log(`AI message id = ${jsonData.id}`);
 				chatItem.aiMsgId = jsonData.id;
 			}
 			respData.responseText = chatItem.aiMessage.content;

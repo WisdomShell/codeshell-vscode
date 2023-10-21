@@ -32,41 +32,34 @@ export class CodeShellCompletionProvider implements InlineCompletionItemProvider
 
         this.statusBar.text = "$(loading~spin)";
         this.statusBar.tooltip = "CodeShell - Working";
-        const prompt = `<fim_prefix>${fimPrefixCode}<fim_suffix>${fimSuffixCode}<fim_middle>`;
-        // console.debug("Requesting completion for prompt:\n", prompt);
-
-        return postCompletion(prompt as String).then((response) => {
+        return postCompletion(fimPrefixCode, fimSuffixCode).then((response) => {
             this.statusBar.text = "$(light-bulb)";
             this.statusBar.tooltip = `CodeShell - Ready`;
-            if (token.isCancellationRequested || !response.content) {
+            if (token.isCancellationRequested || !response) {
                 return Promise.resolve(([] as InlineCompletionItem[]));
             }
-            window.setStatusBarMessage(JSON.stringify(response.content));
-            let text = response.content.replace("<|endoftext|>", "");
-            return [new InlineCompletionItem(text, new Range(position, position))];
+            return [new InlineCompletionItem(response, new Range(position, position))];
         }).catch((error) => {
             console.error(error);
             this.statusBar.text = "$(alert)";
             this.statusBar.tooltip = "CodeShell - Error";
-            window.setStatusBarMessage(`${error}`);
+            window.setStatusBarMessage(`${error}`, 10000);
             return Promise.resolve(([] as InlineCompletionItem[]));
         }).finally(() => {
         });
     }
 
-    private getFimPrefixCode(document: TextDocument, position: Position): String | undefined {
+    private getFimPrefixCode(document: TextDocument, position: Position): string {
         const firstLine = Math.max(position.line - 100, 0);
         const range = new Range(firstLine, 0, position.line, position.character);
-        var text = document.getText(range);
-        return text;
+        return document.getText(range);
     }
 
-    private getFimSuffixCode(document: TextDocument, position: Position): String | undefined {
+    private getFimSuffixCode(document: TextDocument, position: Position): string {
         const startLine = position.line + 1;
-        const endLine = Math.min(startLine + 100, document.lineCount);
+        const endLine = Math.min(startLine + 10, document.lineCount);
         const range = new Range(position.line, position.character, endLine, 0);
-        var text = document.getText(range);
-        return text;
+        return document.getText(range);
     }
 
     private isNil(value: String | undefined | null): boolean {

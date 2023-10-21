@@ -35,7 +35,7 @@ npm exec vsce package
   make
   ```
 
-  在 macOS 上，默认情况下启用了Metal，启用Metal可以将模型加载到 GPU 上进行运行，从而显著提升性能。
+  在 macOS 上，默认情况下启用了Metal，启用Metal可以将模型加载到 GPU 上运行，从而显著提升性能。
 
 + Mac(非Apple Silicon设备)
 
@@ -53,21 +53,32 @@ npm exec vsce package
 
 ### 下载模型
 
-在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf)将模型下载到本地后，将模型放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹的路径，即可从本地加载模型。
+在[Hugging Face Hub](https://huggingface.co/WisdomShell)上，我们提供了三种不同的模型，分别是[CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)、[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)和[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)。以下是下载模型的步骤。
+
+- 使用[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)模型推理，将模型下载到本地后并放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹的路径
+
+ ```
+ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf
+ ```
+
+- 使用[CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)、[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)推理，将模型放置在本地文件夹后，使用[TGI](https://github.com/WisdomShell/text-generation-inference.git)加载本地模型，启动模型服务
 
 ```bash
-git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf
+git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat
+git clone https://huggingface.co/WisdomShell/CodeShell-7B
 ```
 
-### 部署模型
+### 加载模型
 
-使用`llama_cpp_for_codeshell`项目中的`server`命令即可提供API服务
+- `CodeShell-7B-Chat-int4`模型使用`llama_cpp_for_codeshell`项目中的`server`命令即可提供API服务
 
 ```bash
 ./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
 
 注意：对于编译时启用了 Metal 的情况下，若运行时出现异常，您也可以在命令行添加参数 `-ngl 0 `显式地禁用Metal GPU推理，从而使模型正常运行。
+
+- [CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)和[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)模型，使用[TGI](https://github.com/WisdomShell/text-generation-inference.git)加载本地模型，启动模型服务
 
 ## 配置插件
 
@@ -78,12 +89,26 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 - 配置自动触发代码补全建议的时间延迟
 - 配置补全的最大tokens数量
 - 配置问答的最大tokens数量
+- 配置模型运行环境
+
+注意：不同的模型运行环境可以在插件中进行配置。对于[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)模型，您可以在`Code Shell: Run Env For LLMs`选项中选择`CPU with llama.cpp`选项。而对于[CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)和[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)模型，应选择`GPU with TGI toolkit`选项。
 
 ![插件配置截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_settings.png)
 
 ## 功能特性
 
-### 1. 代码辅助
+### 1. 代码补全
+
+- 自动触发代码建议
+- 热键触发代码建议
+
+在编码过程中，当停止输入时，代码补全建议可自动触发（在配置选项`Auto Completion Delay`中可设置为1~3秒），或者您也可以主动触发代码补全建议，使用快捷键`Alt+\`（对于`Windows`电脑）或`option+\`（对于`Mac`电脑）。
+
+当插件提供代码建议时，建议内容以灰色显示在编辑器光标位置，您可以按下Tab键来接受该建议，或者继续输入以忽略该建议。
+
+![代码建议截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_completion.png)
+
+### 2. 代码辅助
 
 - 对一段代码进行解释/优化/清理
 - 为一段代码生成注释/单元测试
@@ -95,7 +120,7 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 
 ![代码辅助截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_assistants.png)
 
-### 2. 智能问答
+### 3. 智能问答
 
 - 支持多轮对话
 - 支持会话历史

@@ -48,7 +48,6 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/co
 Use the `server` command in the `llama_cpp_for_codeshell` project to provide API services.
 
 ```bash
-cd llama_cpp_for_codeshell
 ./server -m ./models/codeshell-chat-q4_0.gguf --host 127.0.0.1 --port 8080
 ```
 
