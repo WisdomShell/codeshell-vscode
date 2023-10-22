@@ -55,7 +55,7 @@ npm exec vsce package
 
 在[Hugging Face Hub](https://huggingface.co/WisdomShell)上，我们提供了三种不同的模型，分别是[CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)、[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)和[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)。以下是下载模型的步骤。
 
-- 使用[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)模型推理，将模型下载到本地后并放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹的路径
+- 使用[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)模型推理，将模型下载到本地后并将下载到的完整文件夹放置在以上代码中的 `llama_cpp_for_codeshell/models` 文件夹下
 
  ```
  git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4/blob/main/codeshell-chat-q4_0.gguf
@@ -86,7 +86,7 @@ git clone https://huggingface.co/WisdomShell/CodeShell-7B
 
 ### 下载模型
 
-在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)将模型下载到本地后，将模型放置在 `$HOME/models` 文件夹的路径下，即可从本地加载模型。
+在 [Hugging Face Hub](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)将模型下载到本地后，将完整模型文件夹放置在 `$HOME/models` 文件夹下，即可从本地加载模型。
 
 ```bash
 git clone https://huggingface.co/WisdomShell/CodeShell-7B-Chat
