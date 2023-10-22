@@ -1,5 +1,8 @@
 # CodeShell VSCode Extension
 
+[![Chinese readme](https://img.shields.io/badge/README-%E4%B8%AD%E6%96%87%20%F0%9F%87%A8%F0%9F%87%B3-white)](README.md)
+[![English readme](https://img.shields.io/badge/README-English%20%F0%9F%87%AC%F0%9F%87%A7-white)](README_EN.md)
+
 The `codeshell-vscode` project is an open-source plugin developed based on the [CodeShell LLM](https://github.com/WisdomShell/codeshell) that supports [Visual Studio Code](https://code.visualstudio.com/Download). It serves as an intelligent coding assistant, offering support for various programming languages such as Python, Java, C/C++, JavaScript, Go, and more. This plugin provides features like code completion, code interpretation, code optimization, comment generation, and conversational Q&A to help developers enhance their coding efficiency in an intelligent manner.
 
 ## Requirements
