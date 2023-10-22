@@ -3,5 +3,4 @@ dist
 node_modules
 .vscode-test/
 *.vsix
-.DS_Store
-./llama_cpp_for_codeshell
+llama_cpp_for_codeshell
