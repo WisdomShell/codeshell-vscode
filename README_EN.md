@@ -1,5 +1,7 @@
 # CodeShell VSCode Extension
 
+[![Chinese readme](https://img.shields.io/badge/README-Chinese-blue)](README.md)
+
 The `codeshell-vscode` project is an open-source plugin developed based on the [CodeShell LLM](https://github.com/WisdomShell/codeshell) that supports [Visual Studio Code](https://code.visualstudio.com/Download). It serves as an intelligent coding assistant, offering support for various programming languages such as Python, Java, C/C++, JavaScript, Go, and more. This plugin provides features like code completion, code interpretation, code optimization, comment generation, and conversational Q&A to help developers enhance their coding efficiency in an intelligent manner.
 
 ## Requirements
@@ -115,7 +117,7 @@ For a more detailed explanation of the parameters, please refer to the [text-gen
 
 Note: Different model runtime environments can be configured within the plugin. For the [CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4) model, you can choose the `CPU with llama.cpp"`option in the `Code Shell: Run Env For LLMs` menu. However, for the [CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B) and [CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat) models, you should select the `GPU with TGI toolkit` option.
 
-![插件配置截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_settings.png)
+![插件配置截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_settings_new.png)
 
 ## Features
 
@@ -138,8 +140,6 @@ When the plugin provides code suggestions, the suggested content appears in gray
 
 In the VSCode sidebar, open the plugin's Q&A interface. Select a portion of code in the editor, right-click to access the CodeShell menu, and choose the corresponding function. The plugin will provide relevant responses in the Q&A interface.
 
-Within the Q&A interface's code block, you can click the copy button to copy the code block or use the insert button to insert the code block's content at the editor's cursor location.
-
 ![代码辅助截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_assistants.png)
 
 ### 3. Code Q&A
@@ -153,5 +153,8 @@ Within the Q&A interface's code block, you can click the copy button to copy the
 
 ![智能问答截图](https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_chat.png)
 
+Within the Q&A interface's code block, you can click the copy button to copy the code block or use the insert button to insert the code block's content at the editor's cursor location.
+
 ## License
+
 Apache 2.0
