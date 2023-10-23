@@ -3,4 +3,3 @@ dist
 node_modules
 .vscode-test/
 *.vsix
-llama_cpp_for_codeshell

@@ -1,19 +1,9 @@
 #!/bin/bash
 
-# Specify the folder containing .vsix files
-VSIX_FOLDER="./"
-
-# Check if the folder exists
-if [ ! -d "$VSIX_FOLDER" ]; then
-  echo "Error: Folder not found at $VSIX_FOLDER"
-  exit 1
-fi
-
-cd $VSIX_FOLDER
 npm exec vsce package
 
 # Find the latest .vsix file based on the file name
-LATEST_VSIX_FILE=$(ls -t "$VSIX_FOLDER"/*.vsix 2>/dev/null | head -1)
+LATEST_VSIX_FILE=$(ls -t *.vsix 2>/dev/null | head -1)
 
 # Check if a .vsix file was found
 if [ -z "$LATEST_VSIX_FILE" ]; then
