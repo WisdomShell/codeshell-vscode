@@ -6,8 +6,8 @@
 
 ## 环境要求
 
-- [node](https://nodejs.org/en)版本要要v18及以上
-- Visual Studio Code版本要求 1.68 及以上
+- [node](https://nodejs.org/en)版本v18及以上
+- Visual Studio Code版本要求 1.83.1 及以上
 - [CodeShell 模型服务](https://github.com/WisdomShell/llama_cpp_for_codeshell)已启动
 
 ## 编译插件

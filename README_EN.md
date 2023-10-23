@@ -7,7 +7,7 @@ The `codeshell-vscode` project is an open-source plugin developed based on the [
 ## Requirements
 
 - [node](https://nodejs.org/en) version v18 and above
-- Visual Studio Code version 1.68 and above
+- Visual Studio Code version 1.83.1 and above
 - The [CodeShell](https://github.com/WisdomShell/llama_cpp_for_codeshell) service is running
 
 ## Compile the Plugin
