@@ -15,7 +15,7 @@
     "url": "https://github.com/WisdomShell/codeshell-vscode.git"
   },
   "engines": {
-    "vscode": "^1.83.1"
+    "vscode": "^1.68.1"
   },
   "categories": [
     "Other"
@@ -37,7 +37,10 @@
         "CodeShell.RunEnvForLLMs": {
           "description": "The environment that should be used for running LLMs",
           "default": "CPU with llama.cpp",
-          "enum": ["CPU with llama.cpp", "GPU with TGI toolkit"],
+          "enum": [
+            "CPU with llama.cpp",
+            "GPU with TGI toolkit"
+          ],
           "type": "string",
           "order": 2
         },
@@ -50,21 +53,36 @@
         "CodeShell.AutoCompletionDelay": {
           "description": "The delay in seconds before automatic code completion triggers.",
           "type": "number",
-          "enum": [1,2,3],
+          "enum": [
+            1,
+            2,
+            3
+          ],
           "default": 1,
           "order": 7
         },
         "CodeShell.CompletionMaxTokens": {
           "description": "Maximum number of tokens for which suggestions will be displayed",
           "type": "number",
-          "enum": [64,128,256,512,1024],
+          "enum": [
+            64,
+            128,
+            256,
+            512,
+            1024
+          ],
           "default": 64,
           "order": 8
         },
         "CodeShell.ChatMaxTokens": {
           "description": "Maximum number of tokens for which chat messages will be displayed",
           "type": "number",
-          "enum": [1024,2048,4096,8192],
+          "enum": [
+            1024,
+            2048,
+            4096,
+            8192
+          ],
           "default": 2048,
           "order": 9
         }
@@ -220,7 +238,7 @@
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.18.5",
-    "@types/vscode": "^1.83.1",
+    "@types/vscode": "^1.68.1",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
     "@vscode/test-electron": "^2.3.2",
@@ -236,7 +254,6 @@
   "dependencies": {
     "abort-controller": "^3.0.0",
     "eventsource-parser": "^1.1.1",
-    "nanoid": "^5.0.1",
     "node-fetch": "^3.3.2",
     "openai": "^3.1.0"
   }

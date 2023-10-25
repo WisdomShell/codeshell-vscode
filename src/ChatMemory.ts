@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import { ExtensionContext } from "vscode";
 
 export class ChatMessage {
@@ -44,8 +43,8 @@ export class ChatItem {
 }
 
 export class SessionItem {
-    id = nanoid();
     time = new Date();
+    id = this.time.toISOString();
     title = "";
     chatList = new Array<ChatItem>();
 
