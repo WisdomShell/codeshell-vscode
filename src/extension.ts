@@ -3,6 +3,7 @@
 import * as vscode from "vscode";
 import { CodeShellCompletionProvider } from "./CodeShellCompletionProvider";
 import { CodeShellWebviewViewProvider } from "./CodeShellWebviewViewProvider";
+import { translate } from "./LanguageHelper";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -19,6 +20,7 @@ function registerWebviewViewExtension(context: vscode.ExtensionContext) {
 	const provider = new CodeShellWebviewViewProvider(context);
 
 	// Register the provider with the extension's context
+
 	context.subscriptions.push(
 		vscode.window.registerWebviewViewProvider(CodeShellWebviewViewProvider.viewId, provider, {
 			webviewOptions: { retainContextWhenHidden: true }
@@ -42,7 +44,7 @@ function registerCompleteionExtension(context: vscode.ExtensionContext) {
 		const configuration = vscode.workspace.getConfiguration();
 		const target = vscode.ConfigurationTarget.Global;
 		configuration.update("CodeShell.AutoTriggerCompletion", enabled, target, false).then(console.error);
-		var msg = enabled ? "启用 自动触发代码补全（输入停止时触发）" : "禁用 自动触发代码补全（可由快捷键触发）";
+		var msg = enabled ? translate("auto_completion") : translate("disable_auto_completion");
 		vscode.window.showInformationMessage(msg);
 		statusBar.show();
 	};

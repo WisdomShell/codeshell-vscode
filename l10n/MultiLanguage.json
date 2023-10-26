@@ -1,0 +1,186 @@
+{
+    "next_question": {
+        "cn": "如果存在下一条问答",
+        "en": "If there is a next question and answer"
+    },
+    "scroll_bar": {
+        "cn": "滚动条位置不变",
+        "en": "Scroll bar position remains unchanged"
+    },
+    "no_next_question": {
+        "cn": "如果不存在下一条问答",
+        "en": "If there is no next question and answer"
+    },
+    "scrolls_to_bottom": {
+        "cn": "滚动条位置滚动到底部",
+        "en": "Scroll bar scrolls to the bottom"
+    },
+    "icon": {
+        "cn": "图标",
+        "en": "Icon"
+    },
+    "input_event": {
+        "cn": "文本框输入事件",
+        "en": "Text box input event"
+    },
+    "clearing_context": {
+        "cn": "当清空输入框内容时",
+        "en": "When clearing the content of the text box"
+    },
+    "restore_height": {
+        "cn": "Restore the height of the text box",
+        "en": "恢复输入框的高度"
+    },
+    "button_event": {
+        "cn": "发送按钮事件",
+        "en": "Send button event"
+    },
+    "start_session": {
+        "cn": "开启新会话",
+        "en": "Start a new session"
+    },
+    "history_event": {
+        "cn": "历史按钮点击事件",
+        "en": "History button click event"
+    },
+    "history_page": {
+        "cn": "历史页面",
+        "en": "History page"
+    },
+    "return_event": {
+        "cn": "返回按钮点击事件",
+        "en": "Return button click event"
+    },
+    "stop_generation_btn": {
+        "cn": "停止生成按钮",
+        "en": "Stop generation button"
+    },
+    "right_click": {
+        "cn": "页面禁用右键菜单",
+        "en": "Page disables right-click menu"
+    },
+    "code": {
+        "cn": "代码",
+        "en": "code"
+    },
+    "unit_test": {
+        "cn": "代码生成单元测试",
+        "en": "Code generation unit test"
+    },
+    "comment": {
+        "cn": "代码生成注释",
+        "en": "Code generation comment"
+    },
+    "stop_generation": {
+        "cn": "停止生成",
+        "en": "Stop generation"
+    },
+    "history": {
+        "cn": "历史",
+        "en": "History"
+    },
+    "send": {
+        "cn": "发送",
+        "en": "Send"
+    },
+    "disable_auto_completion": {
+        "cn": "禁用 自动触发代码补全（可由快捷键触发）",
+        "en": "Disable: Auto Code Completion (Can be triggered by shortcut keys)"
+    },
+    "enable": {
+        "cn": "启用",
+        "en": "Enable"
+    },
+    "answer": {
+        "cn": "回答 :",
+        "en": "Answer"
+    },
+    "answer_completed": {
+        "cn": "回答输出完毕!",
+        "en": "Answer output completed"
+    },
+    "ask_here": {
+        "cn": "在这里提问, Enter发送",
+        "en": "Ask here, Enter"
+    },
+    "line_break": {
+        "cn": "换行",
+        "en": " Line break"
+    },
+    "unknown_language": {
+        "cn": "无法确定语言类型！",
+        "en": "Unknown Language type"
+    },
+    "security_issue": {
+        "cn": ", 是否存在性能问题，请给出优化建议",
+        "en": ". Is there a security issue"
+    },
+    "performance_issue": {
+        "cn": ",是否存在安全性问题，请给出优化建议",
+        "en": ". Is there a performance issue"
+    },
+    "check": {
+        "cn": "检查以下",
+        "en": "Check the following"
+    },
+    "disable": {
+        "cn": "禁用",
+        "en": "Disable"
+    },
+    "auto_completion": {
+        "cn": "启用 自动触发代码补全（输入停止时触发）",
+        "en": "Enable Automatically trigger code completion"
+    },
+    "following": {
+        "cn": "请为以下",
+        "en": "Please for the following"
+    },
+    "optimize_rewrite": {
+        "cn": "请优化并重写以下",
+        "en": "Please optimize and rewrite the following"
+    },
+    "timeout": {
+        "cn": "请求超时，请稍后重试。",
+        "en": "Request timeout, please try again later"
+    },
+    "clean_up": {
+        "cn": "请清理并重写以下",
+        "en": "Please clean up and rewrite the following"
+    },
+    "optimization_suggestion": {
+        "cn": "请给出优化建议",
+        "en": "Please give optimization suggestions"
+    },
+    "explain": {
+        "cn": "请解释以下",
+        "en": "Please explain the following"
+    },
+    "select_code": {
+        "cn": "请选中一段代码",
+        "en": "Please select a section of code"
+    },
+    "input_stop": {
+        "cn": "输入停止时触发",
+        "en": "Triggered when input stops"
+    },
+    "return": {
+        "cn": "返回",
+        "en": "Return"
+    },
+    "how_above_answer": {
+        "cn": "这个回答怎么样？",
+        "en": "How about this answer?"
+    },
+    "question": {
+        "cn": "问题 :",
+        "en": "Question :"
+    },
+    "homepage": {
+        "cn": "首页",
+        "en": "Homepage"
+    },
+    "dummy": {
+        "cn": "",
+        "en": ""
+    }
+}
