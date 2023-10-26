@@ -4,9 +4,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { workspace } from "vscode";
 
 export interface CompletionResponse {
-    "content"?: string;
     "generated_text"?: string;
-
 }
 
 export async function postCompletion(fimPrefixCode: string, fimSuffixCode: string): Promise<string | undefined> {
@@ -17,29 +15,36 @@ export async function postCompletion(fimPrefixCode: string, fimSuffixCode: strin
     if ("CPU with llama.cpp" == modelEnv) {
         let data = {
             "input_prefix": fimPrefixCode, "input_suffix": fimSuffixCode,
-            "n_predict": maxtokens, "temperature": 0.2, "repetition_penalty": 1.0, "top_k": 10, "top_p": 0.95
+            "n_predict": maxtokens, "temperature": 0.2, "repetition_penalty": 1.0, "top_k": 10, "top_p": 0.95,
+            "stop": ["|<end>|", "|end|", "<|endoftext|>", "## human"]
         };
-        const response = await axiosInstance.post<CompletionResponse>(serverAddress + "/infill", data);
+        console.debug("request.data:", data)
+        const response = await axiosInstance.post(serverAddress + "/infill", data);
         var content = "";
         const respData = response.data as string;
         const dataList = respData.split("\n\n");
         for (var chunk of dataList) {
-            if (chunk.startsWith('data:')) {
+            if (chunk.startsWith("data:")) {
                 content += JSON.parse(chunk.substring(5)).content
             }
         }
+        console.debug("response.data:", content)
         return content.replace("<|endoftext|>", "");
     }
-    const prompt = `<fim_prefix>${fimPrefixCode}<fim_suffix>${fimSuffixCode}<fim_middle>`;
     if ("GPU with TGI toolkit" == modelEnv) {
+        const prompt = `<fim_prefix>${fimPrefixCode}<fim_suffix>${fimSuffixCode}<fim_middle>`;
         let data = {
-            'inputs': prompt,
-            'parameters': {
-                'max_new_tokens': maxtokens, 'temperature': 0.2, 'top_p': 0.99,
-                'do_sample': true, 'repetition_penalty': 1.2, 'stop': ["|<end>|", "<end>"]
+            "inputs": prompt,
+            "parameters": {
+                "max_new_tokens": maxtokens, "temperature": 0.2, "repetition_penalty": 1.2, "top_p": 0.99, "do_sample": true,
+                "stop": ["|<end>|", "|end|", "<|endoftext|>", "## human"]
             }
         };
-        const response = await axiosInstance.post<CompletionResponse>(serverAddress + "/generate", data);
+        console.debug("request.data:", data)
+        const uri = "/generate"
+        // const uri = "/codeshell-code/completion"
+        const response = await axiosInstance.post<CompletionResponse>(serverAddress + uri, data);
+        console.debug("response.data:", response.data)
         return response.data.generated_text?.replace("<|endoftext|>", "");
     }
 }

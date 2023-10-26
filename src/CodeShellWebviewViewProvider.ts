@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import * as prompt from "./CreatePrompt";
 import { ChatItem, HumanMessage, AIMessage, SessionItem, SessionStore } from "./ChatMemory";
 import { postEventStream, stopEventStream } from "./RequestEventStream";
+import { sleep } from "./Utils";
 
 export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider {
 	public static readonly viewId = "codeshell.chatView";
@@ -126,6 +127,7 @@ export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider 
 		// focus gpt activity from activity bar
 		if (!this._view) {
 			await vscode.commands.executeCommand("codeshell.chatView.focus");
+			await sleep(1000);
 		} else {
 			this._view?.show?.(true);
 		}
