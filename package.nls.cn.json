@@ -7,5 +7,5 @@
     "codeshell.generate_comment.title": "生成 注释",
     "codeshell.generate_unit_test.title": "生成 单元测试",
     "codeshell.check_performance.title": "检查 性能问题",
-    "codeshell.check_security.title": "检查 安全"
+    "codeshell.check_security.title": "检查 安全性问题"
 }
