@@ -4,13 +4,15 @@ import * as vscode from 'vscode';
 const translations = require('../l10n/MultiLanguage.json');
 
 function getUserLanguagePreference(): string {
-    const lang = vscode.workspace.getConfiguration('CodeShell').get('MultiLanguage') as string;
-    return lang === 'English' ? 'en' : 'cn';
+    const lang = vscode.env.language;
+    // const lang = vscode.workspace.getConfiguration('CodeShell').get('MultiLanguage') as string;
+    if (!lang) { return 'en'; }
+    return lang;
 }
 
-function translate(key: string): string{
+function translate(key: string): string {
     const userLang = getUserLanguagePreference();
     return translations[key] && translations[key][userLang] ? translations[key][userLang] : key;
 }
 
-export {translate};
+export { translate };
