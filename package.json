@@ -45,16 +45,6 @@
           "type": "string",
           "order": 2
         },
-        "CodeShell.MultiLanguage": {
-          "description": "Choice your preferred language.",
-          "default": "English",
-          "enum": [
-            "English",
-            "中文"
-          ],
-          "type": "string",
-          "order": 3
-        },
         "CodeShell.AutoTriggerCompletion": {
           "description": "Whether or not to automatically trigger completion when typing.",
           "default": true,
