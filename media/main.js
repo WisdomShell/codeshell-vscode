@@ -70,10 +70,8 @@
     hljs.highlightAll();
 
     const chatContainer = document.getElementById("chatContainerQuestionListId");
-    // 如果存在下一条问答，滚动条位置不变。
     const testNextDiv = document.getElementById(`qa_section_div_${contentIndex + 1}`);
     if (!testNextDiv) {
-      // 如果不存在下一条问答，滚动条位置滚动到底部。
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
@@ -291,7 +289,7 @@
     }
     refreshBtn.clickHandler = (e) => {
       refreshBtn.style.display = "none";
-      // loading 图标
+      // loading
       document.getElementById(`outputDiv${index}`).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="18" cy="12" r="0" fill="currentColor"><animate attributeName="r" begin=".67" calcMode="spline" dur="1.5s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="12" r="0" fill="currentColor"><animate attributeName="r" begin=".33" calcMode="spline" dur="1.5s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="6" cy="12" r="0" fill="currentColor"><animate attributeName="r" begin="0" calcMode="spline" dur="1.5s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle></svg>`;
       vscode.postMessage({ type: "regenerateThisAnswer", value: index });
     }
@@ -314,7 +312,6 @@
     hisDiv.style.display = "block";
   }
 
-  // 文本框输入事件
   document.getElementById("questioninput").addEventListener("keydown", event => {
     const textarea = event.target;
     console.debug("event.key =", event.key, ", event.keyCode = ", event.keyCode);
@@ -326,7 +323,7 @@
 
     if (event.shiftKey && event.key === "Enter") {
       textarea.style.height = `${textarea.scrollHeight + 5}px`;
-    } else if ((isWin && event.key === "Enter") || (isMac && event.keyCode === 13)) {
+    } else if (((isWin || isLinux) && event.key === "Enter") || (isMac && event.keyCode === 13)) {
       event.preventDefault();
       if (textarea.value && textarea.value.trim().length > 0) {
         vscode.postMessage({ type: "startQuestion", value: textarea.value.trim() });
@@ -336,7 +333,6 @@
     }
   });
 
-  // 当清空输入框内容时，恢复输入框的高度
   document.getElementById("questioninput").addEventListener("keyup", event => {
     const textarea = event.target;
     if (textarea.value && textarea.value.trim().length === 0) {
@@ -344,7 +340,6 @@
     }
   });
 
-  // 发送按钮事件
   document.getElementById("send-button-img").addEventListener("click", event => {
     const textarea = document.getElementById("questioninput");
     if (textarea.value && textarea.value.trim().length > 0) {
@@ -354,30 +349,25 @@
     }
   });
 
-  // 开启新会话
   document.getElementById("add_session_btn").addEventListener("click", event => {
     vscode.postMessage({ type: "startNewSession" });
     let element = document.getElementById("chatContainerQuestionListId");
     element.innerHTML = null;
   });
 
-  // 历史按钮点击事件
   document.getElementById("historyButton").addEventListener("click", event => {
     vscode.postMessage({ type: "showSessionHistory" });
     hideChat_showHistory();
   });
 
-  // 历史页面——返回按钮点击事件
   document.getElementById("historyBackButton").addEventListener("click", event => {
     showChat_hideHistory();
   });
 
-  // 停止生成按钮
   document.getElementById("btn-stop-streaming").addEventListener("click", event => {
     vscode.postMessage({ type: "stopGenerationStream" });
   });
 
-  // 页面禁用右键菜单
   document.addEventListener("contextmenu", event => {
     event.preventDefault();
   });
