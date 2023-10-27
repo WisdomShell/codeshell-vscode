@@ -24,6 +24,7 @@
     "onStartupFinished"
   ],
   "main": "./dist/extension.js",
+  "l10n": "./l10n",
   "contributes": {
     "configuration": {
       "title": "CodeShell",
@@ -35,7 +36,7 @@
           "order": 1
         },
         "CodeShell.RunEnvForLLMs": {
-          "description": "The environment that should be used for running LLMs",
+          "description": "The environment that should be used for running LLMs.",
           "default": "CPU with llama.cpp",
           "enum": [
             "CPU with llama.cpp",
@@ -99,47 +100,47 @@
     "commands": [
       {
         "command": "codeshell.auto_completion_enable",
-        "title": "启用 自动触发补全",
+        "title": "%codeshell.auto_completion_enable.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.auto_completion_disable",
-        "title": "停用 自动触发补全",
+        "title": "%codeshell.auto_completion_disable.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.explain_this_code",
-        "title": "解释 这段代码",
+        "title": "%codeshell.explain_this_code.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.improve_this_code",
-        "title": "优化 这段代码",
+        "title": "%codeshell.improve_this_code.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.clean_this_code",
-        "title": "清理 这段代码",
+        "title": "%codeshell.clean_this_code.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.generate_comment",
-        "title": "生成 注释",
+        "title": "%codeshell.generate_comment.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.generate_unit_test",
-        "title": "生成 单元测试",
+        "title": "%codeshell.generate_unit_test.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.check_performance",
-        "title": "检查 性能问题",
+        "title": "%codeshell.check_performance.title%",
         "category": "codeshell"
       },
       {
         "command": "codeshell.check_security",
-        "title": "检查 安全性问题",
+        "title": "%codeshell.check_security.title%",
         "category": "codeshell"
       }
     ],
@@ -241,6 +242,7 @@
     "@types/vscode": "^1.68.1",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/l10n-dev": "^0.0.18",
     "@vscode/test-electron": "^2.3.2",
     "@vscode/vsce": "^2.21.1",
     "eslint": "^8.41.0",
@@ -252,6 +254,7 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "@vscode/l10n": "^0.0.10",
     "abort-controller": "^3.0.0",
     "eventsource-parser": "^1.1.1",
     "node-fetch": "^3.3.2",

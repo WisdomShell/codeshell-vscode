@@ -2,7 +2,7 @@
 
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { workspace } from "vscode";
-
+import { translate } from "./LanguageHelper";
 export interface CompletionResponse {
     "generated_text"?: string;
 }
@@ -51,7 +51,7 @@ export async function postCompletion(fimPrefixCode: string, fimSuffixCode: strin
 
 const axiosInstance: AxiosInstance = axios.create({
     timeout: 60000,
-    timeoutErrorMessage: "请求超时，请稍后重试。"
+    timeoutErrorMessage: translate("timeout")
 });
 
 axiosInstance.interceptors.request.use(
