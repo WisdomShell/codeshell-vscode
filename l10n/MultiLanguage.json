@@ -1,63 +1,7 @@
 {
-    "next_question": {
-        "zh-cn": "如果存在下一条问答",
-        "en": "If there is a next question and answer"
-    },
-    "scroll_bar": {
-        "zh-cn": "滚动条位置不变",
-        "en": "Scroll bar position remains unchanged"
-    },
-    "no_next_question": {
-        "zh-cn": "如果不存在下一条问答",
-        "en": "If there is no next question and answer"
-    },
-    "scrolls_to_bottom": {
-        "zh-cn": "滚动条位置滚动到底部",
-        "en": "Scroll bar scrolls to the bottom"
-    },
-    "icon": {
-        "zh-cn": "图标",
-        "en": "Icon"
-    },
-    "input_event": {
-        "zh-cn": "文本框输入事件",
-        "en": "Text box input event"
-    },
-    "clearing_context": {
-        "zh-cn": "当清空输入框内容时",
-        "en": "When clearing the content of the text box"
-    },
-    "restore_height": {
-        "zh-cn": "Restore the height of the text box",
-        "en": "恢复输入框的高度"
-    },
-    "button_event": {
-        "zh-cn": "发送按钮事件",
-        "en": "Send button event"
-    },
     "start_session": {
         "zh-cn": "开启新会话",
         "en": "Start a new session"
-    },
-    "history_event": {
-        "zh-cn": "历史按钮点击事件",
-        "en": "History button click event"
-    },
-    "history_page": {
-        "zh-cn": "历史页面",
-        "en": "History page"
-    },
-    "return_event": {
-        "zh-cn": "返回按钮点击事件",
-        "en": "Return button click event"
-    },
-    "stop_generation_btn": {
-        "zh-cn": "停止生成按钮",
-        "en": "Stop generation button"
-    },
-    "right_click": {
-        "zh-cn": "页面禁用右键菜单",
-        "en": "Page disables right-click menu"
     },
     "code": {
         "zh-cn": "代码",
@@ -73,7 +17,7 @@
     },
     "stop_generation": {
         "zh-cn": "停止生成",
-        "en": "Stop generation"
+        "en": "Stop Gen"
     },
     "history": {
         "zh-cn": "历史",
@@ -85,7 +29,7 @@
     },
     "disable_auto_completion": {
         "zh-cn": "禁用 自动触发代码补全（可由快捷键触发）",
-        "en": "Disable: Auto Code Completion (Can be triggered by shortcut keys)"
+        "en": "Disable Auto Code Completion (Can be triggered by shortcut keys)"
     },
     "enable": {
         "zh-cn": "启用",
@@ -93,7 +37,7 @@
     },
     "answer": {
         "zh-cn": "回答 :",
-        "en": "Answer"
+        "en": "Answer :"
     },
     "answer_completed": {
         "zh-cn": "回答输出完毕!",
@@ -101,7 +45,7 @@
     },
     "ask_here": {
         "zh-cn": "在这里提问, Enter发送",
-        "en": "Ask here, Enter"
+        "en": "Ask here, press Enter key to send"
     },
     "line_break": {
         "zh-cn": "换行",
@@ -159,13 +103,9 @@
         "zh-cn": "请选中一段代码",
         "en": "Please select a section of code"
     },
-    "input_stop": {
-        "zh-cn": "输入停止时触发",
-        "en": "Triggered when input stops"
-    },
-    "return": {
+    "history_back_btn": {
         "zh-cn": "返回",
-        "en": "Return"
+        "en": "Back"
     },
     "how_above_answer": {
         "zh-cn": "这个回答怎么样？",

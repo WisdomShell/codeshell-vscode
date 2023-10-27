@@ -1,10 +1,11 @@
 {
     "Enable Auto Completion": "启用 自动触发补全",
     "Disable Auto Completion": "停用 自动触发补全",
-    "Explain Highlight Codes": "解释 这段代码",
-    "Optimize Highlight Codes": "优化 这段代码",
-    "Clean Highlight Codes": "清理 这段代码",
+    "Explain Selected Codes": "解释 这段代码",
+    "Optimize Selected Codes": "优化 这段代码",
+    "Clean Selected Codes": "清理 这段代码",
     "Generate Comment": "生成 注释",
     "Generate Unit Test": "生成 单元测试",
-    "Check Performance": "检查 性能问题"
+    "Check Performance": "检查 性能问题",
+    "Check Security": "检查 安全性问题"
 }

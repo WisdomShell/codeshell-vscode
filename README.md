@@ -164,3 +164,7 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 ## 开源协议
 
 Apache 2.0
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=WisdomShell/codeshell-vscode&type=Date)](https://star-history.com/#WisdomShell/codeshell-vscode&Date)

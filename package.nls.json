@@ -1,11 +1,11 @@
 {
     "codeshell.auto_completion_enable.title": "Enable Auto Completion",
     "codeshell.auto_completion_disable.title": "Disable Auto Completion",
-    "codeshell.explain_this_code.title": "Explain Highlight Codes",
-    "codeshell.improve_this_code.title": "Optimize Highlight Codes",
-    "codeshell.clean_this_code.title": "Clean Highlight Codes",
+    "codeshell.explain_this_code.title": "Explain Selected Codes",
+    "codeshell.improve_this_code.title": "Optimize Selected Codes",
+    "codeshell.clean_this_code.title": "Clean Selected Codes",
     "codeshell.generate_comment.title": "Generate Comment",
     "codeshell.generate_unit_test.title": "Generate Unit Test",
     "codeshell.check_performance.title": "Check Performance",
-    "codeshell.check_security.title": "Check security"
+    "codeshell.check_security.title": "Check Security"
 }

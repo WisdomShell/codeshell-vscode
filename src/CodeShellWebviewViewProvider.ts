@@ -225,7 +225,7 @@ export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider 
 		return `
 			<div class="session" id="${sessionItem.id}">
 				<div class="session-item">
-					<p class="session-title"> ${sessionItem.title} test </p>
+					<p class="session-title"> ${sessionItem.title} </p>
 					<p class="session-date-time"> ${sessionTime} </p>
 				</div>
 				<div class="session-options inner-btns ant-dropdown-trigger">
@@ -409,7 +409,7 @@ export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider 
 													<svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 														<path d="M156.608 487.8592c1.156267-1.137067 2.648533-1.6224 3.918933-2.558933l306.666667-301.569067c13.195733-12.970667 34.586667-12.970667 47.781333 0 13.194667 12.978133 13.194667 34.013867 0 46.987733L263.3024 478.210133l579.2032 0c18.978133 0 34.362667 15.128533 34.362667 33.789867 0 18.6624-15.384533 33.793067-34.362667 33.793067L263.3024 545.793067l251.671467 247.486933c13.194667 12.971733 13.194667 34.010667 0 46.984533-13.194667 12.974933-34.586667 12.974933-47.781333 0l-306.666667-301.5616c-1.269333-0.939733-2.762667-1.421867-3.918933-2.562133-6.334933-6.2304-9.240533-14.340267-9.477333-22.5024C147.367467 502.200533 150.273067 494.090667 156.608 487.8592L156.608 487.8592zM156.608 487.8592" fill="#ffffff" p-id="2370"></path>
 													</svg>
-													<span class="ml-2 history-buttons">返回</span>
+													<span class="ml-2 history-buttons">${translate("history_back_btn")}</span>
 												</div>
 											</div>
 										</div>
@@ -462,7 +462,7 @@ export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider 
 													<textarea nz-input aria-label="ai-input-box"
 														required apptextareaautoresize id="questioninput" autofocus
 														class="form-control chat-input ant-input ng-touched ng-dirty ng-invalid"
-														placeholder=${translate("ask_here")} style="height: 35px; overflow: hidden;"></textarea>
+														placeholder='${translate("ask_here")}' style="height: 35px; overflow: hidden;"></textarea>
 													<div id="reply-buttons2" class="reply-buttons2"
 														style="overflow: hidden;">
 														<div class="row">
