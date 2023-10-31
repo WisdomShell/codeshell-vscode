@@ -36,7 +36,7 @@ export class CodeShellCompletionProvider implements InlineCompletionItemProvider
         return postCompletion(fimPrefixCode, fimSuffixCode).then((response) => {
             this.statusBar.text = "$(light-bulb)";
             this.statusBar.tooltip = `CodeShell - Ready`;
-            if (token.isCancellationRequested || !response) {
+            if (token.isCancellationRequested || !response || this.isNil(response.trim())) {
                 return Promise.resolve(([] as InlineCompletionItem[]));
             }
             return [new InlineCompletionItem(response, new Range(position, position))];
