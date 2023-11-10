@@ -21,9 +21,9 @@ export function createPromptGenerateUnitTest(language: string, functionCode: str
 }
 
 export function createPromptCheckPerformance(language: string, functionCode: string): string {
-	return `${translate("check")} ${language} ${translate("code")}${translate("security_issue")}\n\`\`\`${language}\n${functionCode}\n\`\`\`\n`;
+	return `${translate("check")} ${language} ${translate("code")}${translate("performance_issue")}\n\`\`\`${language}\n${functionCode}\n\`\`\`\n`;
 }
 
 export function createPromptCheckSecurity(language: string, functionCode: string): string {
-	return `${translate("check")} ${language} ${translate("code")}${translate("performance_issue")}\n\`\`\`${language}\n${functionCode}\n\`\`\`\n`;
+	return `${translate("check")} ${language} ${translate("code")}${translate("security_issue")}\n\`\`\`${language}\n${functionCode}\n\`\`\`\n`;
 }
