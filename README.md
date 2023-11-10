@@ -123,9 +123,7 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 
 注意：不同的模型运行环境可以在插件中进行配置。对于[CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4)模型，您可以在`Code Shell: Run Env For LLMs`选项中选择`CPU with llama.cpp`选项。而对于[CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B)和[CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat)模型，应选择`GPU with TGI toolkit`选项。
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_settings_new.png" width="800"/>
-<p>
+![插件配置截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_settings_new.png)
 
 ## 功能特性
 
@@ -138,9 +136,7 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 
 当插件提供代码建议时，建议内容以灰色显示在编辑器光标位置，您可以按下Tab键来接受该建议，或者继续输入以忽略该建议。
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_completion.png" width="800"/>
-<p>
+![代码建议截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_completion.png)
 
 ### 2. 代码辅助
 
@@ -150,9 +146,7 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 
 在vscode侧边栏中打开插件问答界面，在编辑器中选中一段代码，在鼠标右键CodeShell菜单中选择对应的功能项，插件将在问答界面中给出相应的答复。
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_assistants.png" width="800"/>
-<p>
+![代码辅助截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_assistants.png)
 
 ### 3. 智能问答
 
@@ -163,9 +157,7 @@ VSCode中执行`Install from VSIX...`命令，选择`codeshell-vscode-${VERSION_
 - 对任一问题，可重新获取回答
 - 在回答过程中，可以打断
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_chat.png" width="800"/>
-<p>
+![智能问答截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_chat.png)
 
 在问答界面的代码块中，可以点击复制按钮复制该代码块，也可点击插入按钮将该代码块内容插入到编辑器光标处。
 

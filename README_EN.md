@@ -117,9 +117,7 @@ For a more detailed explanation of the parameters, please refer to the [text-gen
 
 Note: Different model runtime environments can be configured within the plugin. For the [CodeShell-7B-Chat-int4](https://huggingface.co/WisdomShell/CodeShell-7B-Chat-int4) model, you can choose the `CPU with llama.cpp"`option in the `Code Shell: Run Env For LLMs` menu. However, for the [CodeShell-7B](https://huggingface.co/WisdomShell/CodeShell-7B) and [CodeShell-7B-Chat](https://huggingface.co/WisdomShell/CodeShell-7B-Chat) models, you should select the `GPU with TGI toolkit` option.
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_settings_new.png" width="800"/>
-<p>
+![插件配置截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_settings_new.png)
 
 ## Features
 
@@ -132,9 +130,7 @@ During the coding process, code completion suggestions can automatically trigger
 
 When the plugin provides code suggestions, the suggested content appears in gray at the editor's cursor position. You can press the Tab key to accept the suggestion or continue typing to ignore it.
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_completion.png" width="800"/>
-<p>
+![代码建议截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_completion.png)
 
 ### 2. Code Assistance
 
@@ -144,9 +140,7 @@ When the plugin provides code suggestions, the suggested content appears in gray
 
 In the VSCode sidebar, open the plugin's Q&A interface. Select a portion of code in the editor, right-click to access the CodeShell menu, and choose the corresponding function. The plugin will provide relevant responses in the Q&A interface.
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_assistants.png" width="800"/>
-<p>
+![代码辅助截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_assistants.png)
 
 ### 3. Code Q&A
 
@@ -157,9 +151,7 @@ In the VSCode sidebar, open the plugin's Q&A interface. Select a portion of code
 - Request Fresh Responses for Any Question
 - Interrupt During the Answering Process
 
-<p align="center">
-    <img src="https://resource.zsmarter.cn/appdata/codeshell-vscode/screenshots/docs_chat.png" width="800"/>
-<p>
+![智能问答截图](https://raw.githubusercontent.com/WisdomShell/codeshell-vscode/main/assets/readme/docs_chat.png)
 
 Within the Q&A interface's code block, you can click the copy button to copy the code block or use the insert button to insert the code block's content at the editor's cursor location.
 

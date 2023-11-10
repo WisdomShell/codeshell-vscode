@@ -3,7 +3,7 @@
   "displayName": "CodeShell VSCode Extension",
   "description": "Coding with CodeShell LLM",
   "publisher": "WisdomShell",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "icon": "assets/logo.png",
   "keywords": [
     "code-suggestion",
