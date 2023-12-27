@@ -56,11 +56,11 @@
         "en": "Unknown Language type"
     },
     "security_issue": {
-        "zh-cn": ", 是否存在性能问题，请给出优化建议",
+        "zh-cn": ", 是否存在安全性问题，请给出优化建议",
         "en": ". Is there a security issue"
     },
     "performance_issue": {
-        "zh-cn": ",是否存在安全性问题，请给出优化建议",
+        "zh-cn": ",是否存在性能问题，请给出优化建议",
         "en": ". Is there a performance issue"
     },
     "check": {

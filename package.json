@@ -3,7 +3,7 @@
   "displayName": "CodeShell VSCode Extension",
   "description": "Coding with CodeShell LLM",
   "publisher": "WisdomShell",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "icon": "assets/logo.png",
   "keywords": [
     "code-suggestion",
@@ -18,7 +18,8 @@
     "vscode": "^1.68.1"
   },
   "categories": [
-    "Other"
+    "Programming Languages",
+    "Machine Learning"
   ],
   "activationEvents": [
     "onStartupFinished"
