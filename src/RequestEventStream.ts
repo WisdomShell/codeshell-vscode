@@ -1,7 +1,6 @@
 /* eslint-disable */
 import { workspace } from "vscode";
 import { FetchStream } from "./FetchStream";
-import AbortController from "abort-controller";
 
 let abortController = new AbortController();
 
