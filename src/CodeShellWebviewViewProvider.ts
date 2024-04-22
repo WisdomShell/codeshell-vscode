@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import * as prompt from "./CreatePrompt";
 import { ChatItem, HumanMessage, AIMessage, SessionItem, SessionStore } from "./ChatMemory";
-import { postEventStream, stopEventStream } from "./RequestEventStream";
+import { postEventStream, stopEventStream } from "./request/event-source";
 import { sleep } from "./Utils";
 import { translate } from "./LanguageHelper";
 export class CodeShellWebviewViewProvider implements vscode.WebviewViewProvider {

@@ -1,6 +1,7 @@
 import { CancellationToken, InlineCompletionContext, InlineCompletionItem, InlineCompletionItemProvider, InlineCompletionList, Position, ProviderResult, Range, TextDocument, window, workspace, StatusBarItem, InlineCompletionTriggerKind } from "vscode";
-import { postCompletion } from "./RequestCompletion";
+import { postCompletion } from "./request/inline-completion";
 import { sleep } from "./Utils";
+import { CODESHELL_CONFIG } from "./consts";
 
 export class CodeShellCompletionProvider implements InlineCompletionItemProvider {
 
@@ -13,12 +14,12 @@ export class CodeShellCompletionProvider implements InlineCompletionItemProvider
     //@ts-ignore
     // because ASYNC and PROMISE
     public async provideInlineCompletionItems(document: TextDocument, position: Position, context: InlineCompletionContext, token: CancellationToken): ProviderResult<InlineCompletionItem[] | InlineCompletionList> {
-        let autoTriggerEnabled = workspace.getConfiguration("CodeShell").get("AutoTriggerCompletion") as boolean;
+        let autoTriggerEnabled = CODESHELL_CONFIG.get("AutoTriggerCompletion") as boolean;
         if (context.triggerKind === InlineCompletionTriggerKind.Automatic) {
             if (!autoTriggerEnabled) {
                 return Promise.resolve(([] as InlineCompletionItem[]));
             }
-            let delay = workspace.getConfiguration("CodeShell").get("AutoCompletionDelay") as number;
+            let delay = CODESHELL_CONFIG.get("AutoCompletionDelay") as number;
             await sleep(1000 * delay);
             if (token.isCancellationRequested) {
                 return Promise.resolve(([] as InlineCompletionItem[]));

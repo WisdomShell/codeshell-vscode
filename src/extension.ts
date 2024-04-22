@@ -4,6 +4,7 @@ import * as vscode from "vscode";
 import { CodeShellCompletionProvider } from "./CodeShellCompletionProvider";
 import { CodeShellWebviewViewProvider } from "./CodeShellWebviewViewProvider";
 import { translate } from "./LanguageHelper";
+import { CODESHELL_CONFIG } from "./consts";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -59,7 +60,7 @@ function registerCompleteionExtension(context: vscode.ExtensionContext) {
 		statusBar
 	);
 
-	if (vscode.workspace.getConfiguration("CodeShell").get("AutoTriggerCompletion")) {
+	if (CODESHELL_CONFIG.get("AutoTriggerCompletion")) {
 		vscode.commands.executeCommand("codeshell.auto_completion_enable");
 	} else {
 		vscode.commands.executeCommand("codeshell.auto_completion_disable");
