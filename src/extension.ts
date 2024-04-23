@@ -3,7 +3,6 @@
 import * as vscode from "vscode";
 import { CodeShellCompletionProvider } from "./CodeShellCompletionProvider";
 import { CodeShellWebviewViewProvider } from "./CodeShellWebviewViewProvider";
-import { translate } from "./LanguageHelper";
 import { CODESHELL_CONFIG } from "./consts";
 
 // This method is called when your extension is activated
@@ -45,7 +44,7 @@ function registerCompleteionExtension(context: vscode.ExtensionContext) {
 		const configuration = vscode.workspace.getConfiguration();
 		const target = vscode.ConfigurationTarget.Global;
 		configuration.update("CodeShell.AutoTriggerCompletion", enabled, target, false).then(console.error);
-		var msg = enabled ? translate("auto_completion") : translate("disable_auto_completion");
+		var msg = enabled ? vscode.l10n.t("Enable automatically code completion (triggered when input stops)") : vscode.l10n.t("Disable auto code completion (can be triggered by shortcut keys)");
 		vscode.window.showInformationMessage(msg);
 		statusBar.show();
 	};

@@ -1,4 +1,4 @@
-import { CancellationToken, InlineCompletionContext, InlineCompletionItem, InlineCompletionItemProvider, InlineCompletionList, Position, ProviderResult, Range, TextDocument, window, workspace, StatusBarItem, InlineCompletionTriggerKind } from "vscode";
+import { CancellationToken, InlineCompletionContext, InlineCompletionItem, InlineCompletionItemProvider, InlineCompletionList, Position, ProviderResult, Range, TextDocument, window, StatusBarItem, InlineCompletionTriggerKind } from "vscode";
 import { postCompletion } from "./request/inline-completion";
 import { sleep } from "./Utils";
 import { CODESHELL_CONFIG } from "./consts";
