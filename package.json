@@ -3,7 +3,7 @@
   "displayName": "CodeShell VSCode Extension",
   "description": "Coding with CodeShell LLM",
   "publisher": "WisdomShell",
-  "version": "0.0.6",
+  "version": "0.1.1",
   "icon": "assets/logo.png",
   "keywords": [
     "code-suggestion",
@@ -245,7 +245,7 @@
     "@typescript-eslint/parser": "^5.59.8",
     "@vscode/l10n-dev": "^0.0.18",
     "@vscode/test-electron": "^2.3.2",
-    "@vscode/vsce": "^2.21.1",
+    "@vscode/vsce": "^2.26.0",
     "eslint": "^8.41.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
