@@ -5,7 +5,7 @@ export const EXTENSION_PATH = extensions.getExtension(EXTENSION_ID)?.extensionPa
 
 
 export const END_OF_TEXT = "<|endoftext|>";
-export const STOP_WORDS = [END_OF_TEXT, "|<end>|", "|end|", "## human"];
+export const STOP_WORDS = [END_OF_TEXT, "|<end>|", "|<end", "|end|", "## human"];
 
 
 export const CODESHELL_CONFIG = workspace.getConfiguration("CodeShell");
